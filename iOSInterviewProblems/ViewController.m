@@ -31,7 +31,7 @@
     
     [layoutView changeViewLayout];
     [layoutView changeViewSize];
-    layoutView.frame = CGRectMake(0, 0, 100, 100);
+//    layoutView.frame = CGRectMake(0, 0, 100, 100);
     [self testRuntimeProperty];
     [self testMultableHiglightedInLabel];
     [self testDeepCopyWithDictionary];
@@ -62,6 +62,7 @@
 //查找到文字之后再进行高亮操作
 - (void)testMultableHiglightedInLabel {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 200, 20)];
+    label.numberOfLines = 0;
     [self.view addSubview:label];
     
 //    NSString *rawString = @"再点搜索，检查搜框";
