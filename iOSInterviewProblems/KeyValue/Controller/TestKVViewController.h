@@ -10,4 +10,6 @@
 
 @interface TestKVViewController : UIViewController
 
+- (void)ov_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object;
+
 @end

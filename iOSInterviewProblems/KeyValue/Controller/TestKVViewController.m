@@ -8,8 +8,16 @@
 
 #import "TestKVViewController.h"
 #import "AuthorInfo.h"
+#import "NSObject+OVKVO.h"
 
-@interface TestKVViewController ()
+static void * PopularBookContext = &PopularBookContext;
+static void * LatestBookContext = &LatestBookContext;
+
+@interface TestKVViewController () {
+    Book *popularBook;
+    Book *latestBook;
+    Book *commentBook;
+}
 
 @end
 
@@ -22,6 +30,7 @@
     
     [self testKVC];
     [self testKVO];
+    [self testCustomKVO];
 }
 
 /*书籍样例数据格式
@@ -88,29 +97,54 @@
 
 //使用KVO
 - (void)testKVO {
-    Book *devilAndAngel = [[Book alloc] init];
-    [devilAndAngel setValue:@"Devil and Angel" forKey:@"name"];
-    [devilAndAngel setValue:@(29.50) forKey:@"price"];
-    [devilAndAngel setValue:[self convertStringToDate:@"2013-12-01"] forKey:@"publishTime"];
+    popularBook = [[Book alloc] init];
+    [popularBook setValue:@"Devil and Angel" forKey:@"name"];
+    [popularBook setValue:@(29.50) forKey:@"price"];
+    [popularBook setValue:[self convertStringToDate:@"2013-12-01"] forKey:@"publishTime"];
     
-    [devilAndAngel addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    [popularBook addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:PopularBookContext];
     
-    [devilAndAngel setValue:@"Lost Symbols" forKey:@"name"];
+    [popularBook setValue:@"Lost Symbols" forKey:@"name"];
     
-    [devilAndAngel removeObserver:self forKeyPath:@"name"];
-    
+    latestBook = [[Book alloc] initWithBookName:@"Inferno" andPrice:30.8 andPulishTime:[self convertStringToDate:@"2013-12-01"]];
+    [latestBook addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:LatestBookContext];
+    [latestBook setValue:@"waitting for review" forKey:@"name"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     NSLog(@"observeValueForKeyPath");
-    if ([keyPath isEqualToString:@"name"]) {
-        NSLog(@"current change => %@",change);
+    if (context == PopularBookContext) {
+        if ([keyPath isEqualToString:@"name"]) {
+            NSLog(@"popular book change => %@",change);
+        }
+    } else if (context == LatestBookContext) {
+        if ([keyPath isEqualToString:@"name"]) {
+            NSLog(@"latest book change -> %@",change);
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [popularBook removeObserver:self forKeyPath:@"name"];
+    [latestBook removeObserver:self forKeyPath:@"name"];
+}
+
+//使用自己创建的KVO
+- (void)testCustomKVO {
+    commentBook = [[Book alloc] init];
+    [commentBook ov_addObserver:self forKeyPath:@"comment"];
+    [commentBook setValue:@"very good" forKey:@"comment"];
+}
+
+- (void)ov_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object {
+    NSLog(@"did get change of -> %@",keyPath);
 }
 
 /*

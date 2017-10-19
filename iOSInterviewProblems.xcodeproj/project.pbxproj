@@ -11,6 +11,8 @@
 		CE65FC4A1F9755A3008FF2B6 /* TestKVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65FC441F9755A3008FF2B6 /* TestKVViewController.m */; };
 		CE65FC4B1F9755A3008FF2B6 /* AuthorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65FC471F9755A3008FF2B6 /* AuthorInfo.m */; };
 		CE65FC4C1F9755A3008FF2B6 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65FC491F9755A3008FF2B6 /* Book.m */; };
+		CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65FC511F989313008FF2B6 /* NSObject+OVKVO.m */; };
+		CE65FC551F98939B008FF2B6 /* Book_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65FC541F98939B008FF2B6 /* Book_KVO.m */; };
 		CE757E891F8B218A009354C0 /* NSObject+MethodA.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E881F8B218A009354C0 /* NSObject+MethodA.m */; };
 		CE757E8C1F8B2196009354C0 /* NSObject+MethodB.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E8B1F8B2196009354C0 /* NSObject+MethodB.m */; };
 		CE757E8F1F8B49F4009354C0 /* NSString+Finder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E8E1F8B49F4009354C0 /* NSString+Finder.m */; };
@@ -37,6 +39,10 @@
 		CE65FC471F9755A3008FF2B6 /* AuthorInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorInfo.m; sourceTree = "<group>"; };
 		CE65FC481F9755A3008FF2B6 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		CE65FC491F9755A3008FF2B6 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		CE65FC501F989313008FF2B6 /* NSObject+OVKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+OVKVO.h"; sourceTree = "<group>"; };
+		CE65FC511F989313008FF2B6 /* NSObject+OVKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OVKVO.m"; sourceTree = "<group>"; };
+		CE65FC531F98939B008FF2B6 /* Book_KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book_KVO.h; sourceTree = "<group>"; };
+		CE65FC541F98939B008FF2B6 /* Book_KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book_KVO.m; sourceTree = "<group>"; };
 		CE757E871F8B218A009354C0 /* NSObject+MethodA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodA.h"; sourceTree = "<group>"; };
 		CE757E881F8B218A009354C0 /* NSObject+MethodA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodA.m"; sourceTree = "<group>"; };
 		CE757E8A1F8B2196009354C0 /* NSObject+MethodB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodB.h"; sourceTree = "<group>"; };
@@ -113,6 +119,10 @@
 				CE65FC471F9755A3008FF2B6 /* AuthorInfo.m */,
 				CE65FC481F9755A3008FF2B6 /* Book.h */,
 				CE65FC491F9755A3008FF2B6 /* Book.m */,
+				CE65FC531F98939B008FF2B6 /* Book_KVO.h */,
+				CE65FC541F98939B008FF2B6 /* Book_KVO.m */,
+				CE65FC501F989313008FF2B6 /* NSObject+OVKVO.h */,
+				CE65FC511F989313008FF2B6 /* NSObject+OVKVO.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA50CD51F78F0EA00453DBE /* ViewController.m in Sources */,
+				CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */,
 				CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */,
 				CE757E971F8F4518009354C0 /* Person.m in Sources */,
 				CEA50CEE1F78F1BF00453DBE /* TestLayoutView.m in Sources */,
@@ -299,6 +310,7 @@
 				CE65FC4B1F9755A3008FF2B6 /* AuthorInfo.m in Sources */,
 				CEA50CCF1F78F0EA00453DBE /* main.m in Sources */,
 				CE65FC4A1F9755A3008FF2B6 /* TestKVViewController.m in Sources */,
+				CE65FC551F98939B008FF2B6 /* Book_KVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

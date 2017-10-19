@@ -13,6 +13,9 @@
 @property (nonatomic,copy)NSString *name;
 @property (nonatomic,assign)float price;
 @property (nonatomic,strong)NSDate *publishTime;
+@property (nonatomic,copy)NSString *comment;
+
+- (instancetype)initWithBookName:(NSString *)name andPrice:(float)price andPulishTime:(NSDate *)date;
 
 - (int)pageCount;
 - (void)setPageCount:(int)pageCount;

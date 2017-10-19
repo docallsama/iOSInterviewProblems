@@ -15,7 +15,15 @@
 @end
 
 @implementation Book
-
+- (instancetype)initWithBookName:(NSString *)name andPrice:(float)price andPulishTime:(NSDate *)date {
+    self = [super init];
+    if (self) {
+        self.name = name;
+        self.price = price;
+        self.publishTime = date;
+    }
+    return self;
+}
 
 - (int)pageCount {
     return bookPageCount;
