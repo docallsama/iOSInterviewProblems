@@ -7,14 +7,17 @@
 //
 
 #import "BlocksViewController.h"
+#import "MacroToolsDefine.h"
 
-typedef BOOL (^authorNameCheck)(NSString *name);
+typedef BOOL (^AuthorNameCheck)(NSString *name);
 
 @interface BlocksViewController ()
 
 @property (nonatomic, copy) BOOL (^authorNameCheck)(NSString *name);
 
-@property (nonatomic, copy) authorNameCheck semiCheck;
+@property (nonatomic, copy) AuthorNameCheck semiCheck;
+
+@property (nonatomic, copy) void (^descriptionCheck)();
 
 @end
 
@@ -33,6 +36,8 @@ typedef BOOL (^authorNameCheck)(NSString *name);
         }
     }];
     [self checkAuthorNameBlock];
+    
+    
 }
 
 //
@@ -76,7 +81,7 @@ typedef BOOL (^authorNameCheck)(NSString *name);
 
 //typdef方式
 - (void)checkAuthorNameBlock {
-    authorNameCheck check = ^BOOL(NSString *name) {
+    AuthorNameCheck check = ^BOOL(NSString *name) {
         if ([name isEqualToString:@"Dan Brown"]) {
             return true;
         } else {
@@ -87,9 +92,28 @@ typedef BOOL (^authorNameCheck)(NSString *name);
     NSLog(@"check name result -> %d",result);
 }
 
+//解决 retain cycle
+- (void)avoidRetainCycle {
+    
+    __weak __typeof(self)weakSelf = self;
+    weakify(self);
+    self.descriptionCheck = ^() {
+        [weakSelf checkDescription];
+        [self__weak_ checkDescription];
+    };
+}
+
+- (void)checkDescription {
+    NSLog(@"test description");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    NSLog(@"released %@",[self class]);
 }
 
 /*

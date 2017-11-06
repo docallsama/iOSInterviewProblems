@@ -33,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE29DCBA1FB05D5000184896 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CE29DCBC1FB05D9100184896 /* MacroToolsDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroToolsDefine.h; sourceTree = "<group>"; };
 		CE65FC301F948B57008FF2B6 /* testString.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testString.txt; sourceTree = "<group>"; };
 		CE65FC431F9755A3008FF2B6 /* TestKVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestKVViewController.h; sourceTree = "<group>"; };
 		CE65FC441F9755A3008FF2B6 /* TestKVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestKVViewController.m; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE29DCBB1FB05D8900184896 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CE29DCBC1FB05D9100184896 /* MacroToolsDefine.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		CE65FC2F1F948B2A008FF2B6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 				CEA50CD11F78F0EA00453DBE /* AppDelegate.m */,
 				CEA50CD31F78F0EA00453DBE /* ViewController.h */,
 				CEA50CD41F78F0EA00453DBE /* ViewController.m */,
+				CE29DCBB1FB05D8900184896 /* Config */,
 				CEA50CE41F78F0F500453DBE /* DuplicateClasses */,
 				CEA50CEB1F78F1A100453DBE /* LayoutSubviews */,
 				CE757E831F8B20C9009354C0 /* Category */,
@@ -201,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA50CCE1F78F0EA00453DBE /* main.m */,
+				CE29DCBA1FB05D5000184896 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -442,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = iOSInterviewProblems/PrefixHeader.pch;
 				INFOPLIST_FILE = iOSInterviewProblems/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uzai.iOSInterviewProblems;
@@ -453,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = iOSInterviewProblems/PrefixHeader.pch;
 				INFOPLIST_FILE = iOSInterviewProblems/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uzai.iOSInterviewProblems;
