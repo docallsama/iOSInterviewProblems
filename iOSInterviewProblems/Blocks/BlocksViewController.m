@@ -36,8 +36,6 @@ typedef BOOL (^AuthorNameCheck)(NSString *name);
         }
     }];
     [self checkAuthorNameBlock];
-    
-    
 }
 
 //
@@ -96,10 +94,19 @@ typedef BOOL (^AuthorNameCheck)(NSString *name);
 - (void)avoidRetainCycle {
     
     __weak __typeof(self)weakSelf = self;
-    weakify(self);
+    
+//    weakify(self);
+    
+    @weakify(self);
+    
     self.descriptionCheck = ^() {
         [weakSelf checkDescription];
-        [self__weak_ checkDescription];
+        
+//         [self__weak_ checkDescription];
+        
+        @strongify(self);
+        if (!self) return;
+        [self checkDescription];
     };
 }
 

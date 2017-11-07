@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE29DCC51FB1669500184896 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = CE29DCC21FB1669500184896 /* EXTScope.m */; };
+		CE29DCC81FB19E9B00184896 /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE29DCC71FB19E9B00184896 /* EXTRuntimeExtensions.m */; };
 		CE65FC311F948B57008FF2B6 /* testString.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE65FC301F948B57008FF2B6 /* testString.txt */; };
 		CE65FC4A1F9755A3008FF2B6 /* TestKVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65FC441F9755A3008FF2B6 /* TestKVViewController.m */; };
 		CE65FC4B1F9755A3008FF2B6 /* AuthorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65FC471F9755A3008FF2B6 /* AuthorInfo.m */; };
@@ -35,6 +37,11 @@
 /* Begin PBXFileReference section */
 		CE29DCBA1FB05D5000184896 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		CE29DCBC1FB05D9100184896 /* MacroToolsDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroToolsDefine.h; sourceTree = "<group>"; };
+		CE29DCC11FB1669500184896 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
+		CE29DCC21FB1669500184896 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
+		CE29DCC31FB1669500184896 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		CE29DCC61FB19E9B00184896 /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		CE29DCC71FB19E9B00184896 /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTRuntimeExtensions.m; sourceTree = "<group>"; };
 		CE65FC301F948B57008FF2B6 /* testString.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testString.txt; sourceTree = "<group>"; };
 		CE65FC431F9755A3008FF2B6 /* TestKVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestKVViewController.h; sourceTree = "<group>"; };
 		CE65FC441F9755A3008FF2B6 /* TestKVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestKVViewController.m; sourceTree = "<group>"; };
@@ -97,6 +104,26 @@
 				CE29DCBC1FB05D9100184896 /* MacroToolsDefine.h */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		CE29DCBD1FB1669500184896 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CE29DCBE1FB1669500184896 /* EXTScope */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		CE29DCBE1FB1669500184896 /* EXTScope */ = {
+			isa = PBXGroup;
+			children = (
+				CE29DCC61FB19E9B00184896 /* EXTRuntimeExtensions.h */,
+				CE29DCC71FB19E9B00184896 /* EXTRuntimeExtensions.m */,
+				CE29DCC11FB1669500184896 /* EXTScope.h */,
+				CE29DCC21FB1669500184896 /* EXTScope.m */,
+				CE29DCC31FB1669500184896 /* metamacros.h */,
+			);
+			path = EXTScope;
 			sourceTree = "<group>";
 		};
 		CE65FC2F1F948B2A008FF2B6 /* Resources */ = {
@@ -191,6 +218,7 @@
 				CEA50CD11F78F0EA00453DBE /* AppDelegate.m */,
 				CEA50CD31F78F0EA00453DBE /* ViewController.h */,
 				CEA50CD41F78F0EA00453DBE /* ViewController.m */,
+				CE29DCBD1FB1669500184896 /* Util */,
 				CE29DCBB1FB05D8900184896 /* Config */,
 				CEA50CE41F78F0F500453DBE /* DuplicateClasses */,
 				CEA50CEB1F78F1A100453DBE /* LayoutSubviews */,
@@ -321,12 +349,14 @@
 				CEA50CD51F78F0EA00453DBE /* ViewController.m in Sources */,
 				CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */,
 				CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */,
+				CE29DCC51FB1669500184896 /* EXTScope.m in Sources */,
 				CE757E971F8F4518009354C0 /* Person.m in Sources */,
 				CEA50CEE1F78F1BF00453DBE /* TestLayoutView.m in Sources */,
 				CEB2E86D1FB00DB300D32806 /* BlocksViewController.m in Sources */,
 				CE757E921F8B7D2F009354C0 /* NSDictionary+DeepCopy.m in Sources */,
 				CE757E9D1F8F637E009354C0 /* Person+MethodRun.m in Sources */,
 				CE757E8C1F8B2196009354C0 /* NSObject+MethodB.m in Sources */,
+				CE29DCC81FB19E9B00184896 /* EXTRuntimeExtensions.m in Sources */,
 				CE757E9A1F8F5C3A009354C0 /* Car.m in Sources */,
 				CE757E891F8B218A009354C0 /* NSObject+MethodA.m in Sources */,
 				CEA50CEA1F78F0F500453DBE /* BFormClass.m in Sources */,
