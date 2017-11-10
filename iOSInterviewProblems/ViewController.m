@@ -8,11 +8,8 @@
 
 #import "ViewController.h"
 #import "TestLayoutView.h"
-#import "NSObject+MethodB.h"
-#import "NSObject+MethodA.h"
 #import "NSString+Finder.h"
 #import "NSDictionary+DeepCopy.h"
-#import "Person.h"
 
 @interface ViewController ()
 
@@ -32,19 +29,10 @@
     [layoutView changeViewLayout];
     [layoutView changeViewSize];
 //    layoutView.frame = CGRectMake(0, 0, 100, 100);
-    [self testRuntimeProperty];
     [self testMultableHiglightedInLabel];
     [self testDeepCopyWithDictionary];
-    [self testMessageSend];
     
 //    [self testFindStringInChapter];
-}
-
-- (void)testRuntimeProperty {
-    NSObject *obj = [[NSObject alloc] init];
-    obj.name = @"test run";
-    NSLog(@"obj name -> %@",obj.name);
-    [obj testMethod];
 }
 
 //测试正则与for循环查找文字的速度
@@ -92,13 +80,6 @@
     NSMutableDictionary *innerDic = mutableDic[@"key"];
     [innerDic setObject:@"value2" forKey:@"key2"];
     NSLog(@"innerDic -> %@",innerDic);
-}
-
-//消息转发机制
-- (void)testMessageSend {
-    Person *alen = [Person new];
-//    [alen run];
-    [Person instanceRun];
 }
 
 - (void)viewDidLayoutSubviews {

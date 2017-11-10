@@ -20,9 +20,10 @@
 		CE757E8C1F8B2196009354C0 /* NSObject+MethodB.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E8B1F8B2196009354C0 /* NSObject+MethodB.m */; };
 		CE757E8F1F8B49F4009354C0 /* NSString+Finder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E8E1F8B49F4009354C0 /* NSString+Finder.m */; };
 		CE757E921F8B7D2F009354C0 /* NSDictionary+DeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E911F8B7D2F009354C0 /* NSDictionary+DeepCopy.m */; };
-		CE757E971F8F4518009354C0 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E961F8F4518009354C0 /* Person.m */; };
-		CE757E9A1F8F5C3A009354C0 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E991F8F5C3A009354C0 /* Car.m */; };
 		CE757E9D1F8F637E009354C0 /* Person+MethodRun.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E9C1F8F637E009354C0 /* Person+MethodRun.m */; };
+		CE9E12FC1FB59233009D6E6C /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12F81FB59233009D6E6C /* Car.m */; };
+		CE9E12FD1FB59233009D6E6C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FA1FB59233009D6E6C /* Person.m */; };
+		CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FF1FB59250009D6E6C /* MessageSendViewController.m */; };
 		CEA50CCF1F78F0EA00453DBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA50CCE1F78F0EA00453DBE /* main.m */; };
 		CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA50CD11F78F0EA00453DBE /* AppDelegate.m */; };
 		CEA50CD51F78F0EA00453DBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA50CD41F78F0EA00453DBE /* ViewController.m */; };
@@ -64,12 +65,14 @@
 		CE757E8E1F8B49F4009354C0 /* NSString+Finder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Finder.m"; sourceTree = "<group>"; };
 		CE757E901F8B7D2F009354C0 /* NSDictionary+DeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DeepCopy.h"; sourceTree = "<group>"; };
 		CE757E911F8B7D2F009354C0 /* NSDictionary+DeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DeepCopy.m"; sourceTree = "<group>"; };
-		CE757E951F8F4518009354C0 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		CE757E961F8F4518009354C0 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		CE757E981F8F5C3A009354C0 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		CE757E991F8F5C3A009354C0 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		CE757E9B1F8F637E009354C0 /* Person+MethodRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+MethodRun.h"; sourceTree = "<group>"; };
 		CE757E9C1F8F637E009354C0 /* Person+MethodRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+MethodRun.m"; sourceTree = "<group>"; };
+		CE9E12F71FB59233009D6E6C /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		CE9E12F81FB59233009D6E6C /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		CE9E12F91FB59233009D6E6C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		CE9E12FA1FB59233009D6E6C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		CE9E12FE1FB59250009D6E6C /* MessageSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSendViewController.h; sourceTree = "<group>"; };
+		CE9E12FF1FB59250009D6E6C /* MessageSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSendViewController.m; sourceTree = "<group>"; };
 		CEA50CCA1F78F0EA00453DBE /* iOSInterviewProblems.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSInterviewProblems.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA50CCE1F78F0EA00453DBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CEA50CD01F78F0EA00453DBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -199,12 +202,30 @@
 		CE757E941F8F4508009354C0 /* MessageSend */ = {
 			isa = PBXGroup;
 			children = (
-				CE757E951F8F4518009354C0 /* Person.h */,
-				CE757E961F8F4518009354C0 /* Person.m */,
-				CE757E981F8F5C3A009354C0 /* Car.h */,
-				CE757E991F8F5C3A009354C0 /* Car.m */,
+				CE9E12F61FB59233009D6E6C /* Model */,
+				CE9E12FB1FB59233009D6E6C /* Controller */,
 			);
 			path = MessageSend;
+			sourceTree = "<group>";
+		};
+		CE9E12F61FB59233009D6E6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E12F71FB59233009D6E6C /* Car.h */,
+				CE9E12F81FB59233009D6E6C /* Car.m */,
+				CE9E12F91FB59233009D6E6C /* Person.h */,
+				CE9E12FA1FB59233009D6E6C /* Person.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE9E12FB1FB59233009D6E6C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E12FE1FB59250009D6E6C /* MessageSendViewController.h */,
+				CE9E12FF1FB59250009D6E6C /* MessageSendViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		CEA50CC11F78F0EA00453DBE = {
@@ -361,17 +382,17 @@
 			files = (
 				CEA50CD51F78F0EA00453DBE /* ViewController.m in Sources */,
 				CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */,
+				CE9E12FD1FB59233009D6E6C /* Person.m in Sources */,
 				CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */,
 				CE29DCC51FB1669500184896 /* EXTScope.m in Sources */,
-				CE757E971F8F4518009354C0 /* Person.m in Sources */,
 				CEA50CEE1F78F1BF00453DBE /* TestLayoutView.m in Sources */,
 				CEB2E86D1FB00DB300D32806 /* BlocksViewController.m in Sources */,
 				A74A81461FB47473000BFAC0 /* GCDViewController.m in Sources */,
 				CE757E921F8B7D2F009354C0 /* NSDictionary+DeepCopy.m in Sources */,
 				CE757E9D1F8F637E009354C0 /* Person+MethodRun.m in Sources */,
+				CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */,
 				CE757E8C1F8B2196009354C0 /* NSObject+MethodB.m in Sources */,
 				CE29DCC81FB19E9B00184896 /* EXTRuntimeExtensions.m in Sources */,
-				CE757E9A1F8F5C3A009354C0 /* Car.m in Sources */,
 				CE757E891F8B218A009354C0 /* NSObject+MethodA.m in Sources */,
 				CEA50CEA1F78F0F500453DBE /* BFormClass.m in Sources */,
 				CE757E8F1F8B49F4009354C0 /* NSString+Finder.m in Sources */,
@@ -379,6 +400,7 @@
 				CE65FC4C1F9755A3008FF2B6 /* Book.m in Sources */,
 				CE65FC4B1F9755A3008FF2B6 /* AuthorInfo.m in Sources */,
 				CEA50CCF1F78F0EA00453DBE /* main.m in Sources */,
+				CE9E12FC1FB59233009D6E6C /* Car.m in Sources */,
 				CE65FC4A1F9755A3008FF2B6 /* TestKVViewController.m in Sources */,
 				CE65FC551F98939B008FF2B6 /* Book_KVO.m in Sources */,
 			);
