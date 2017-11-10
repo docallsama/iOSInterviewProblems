@@ -36,6 +36,8 @@ typedef BOOL (^AuthorNameCheck)(NSString *name);
         }
     }];
     [self checkAuthorNameBlock];
+    
+    [self cancelBlock];
 }
 
 //
@@ -112,6 +114,22 @@ typedef BOOL (^AuthorNameCheck)(NSString *name);
 
 - (void)checkDescription {
     NSLog(@"test description");
+}
+
+//取消一个block
+- (void)cancelBlock {
+    
+    BOOL status = false;
+    
+    @weakify(self);
+    self.descriptionCheck = ^() {
+        if (status) {
+            
+            @strongify(self);
+            if (!self) return;
+            [self checkDescription];
+        }
+    };
 }
 
 - (void)didReceiveMemoryWarning {
