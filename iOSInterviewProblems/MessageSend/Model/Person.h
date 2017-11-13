@@ -10,8 +10,13 @@
 
 @interface Person : NSObject
 
+//未实现的实例run
 - (void)run;
 
+//正常的run写法
+- (NSString *)normalRun;
+
+//未实现的类run
 + (void)instanceRun;
 
 @end

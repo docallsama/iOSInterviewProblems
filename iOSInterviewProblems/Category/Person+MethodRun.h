@@ -12,4 +12,7 @@
 
 //- (void)run;
 
+//正常的run写法
+- (NSString *)normalRun;
+
 @end

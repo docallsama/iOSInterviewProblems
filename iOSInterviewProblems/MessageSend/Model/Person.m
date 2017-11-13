@@ -37,6 +37,11 @@ void run (id self, SEL _cmd) {
     NSLog(@"fake run");
 }
 
+- (NSString *)normalRun {
+    NSLog(@"normal run");
+    return @"normal run";
+}
+
 //第一次拦截
 //+ (BOOL)resolveInstanceMethod:(SEL)sel {
 //    if (sel == @selector(run)) {

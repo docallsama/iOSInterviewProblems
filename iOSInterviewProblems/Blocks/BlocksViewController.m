@@ -102,7 +102,10 @@ typedef BOOL (^AuthorNameCheck)(NSString *name);
     @weakify(self);
     
     self.descriptionCheck = ^() {
-        [weakSelf checkDescription];
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf) {
+            [strongSelf checkDescription];
+        }
         
 //         [self__weak_ checkDescription];
         

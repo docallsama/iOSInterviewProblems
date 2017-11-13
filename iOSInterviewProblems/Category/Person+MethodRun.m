@@ -14,4 +14,9 @@
 //    NSLog(@"category run");
 //}
 
+- (NSString *)normalRun {
+    NSLog(@"category normal run");
+    return @"test run";
+}
+
 @end
