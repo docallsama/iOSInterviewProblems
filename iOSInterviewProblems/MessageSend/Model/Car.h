@@ -10,6 +10,8 @@
 
 @interface Car : NSObject
 
+@property (nonatomic,copy)NSString *model;
+
 - (void)run;
 
 + (void)instanceRun;

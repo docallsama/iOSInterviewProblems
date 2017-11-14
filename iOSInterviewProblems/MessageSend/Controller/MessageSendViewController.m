@@ -7,6 +7,7 @@
 //
 
 #import "MessageSendViewController.h"
+#import "Car.h"
 #import "Person.h"
 #import "Person+MethodRun.h"
 #import "NSObject+MethodB.h"
@@ -26,6 +27,9 @@
     [self testRuntimeProperty];
     [self testMessageForward];
     [self testMessageSend];
+    
+    [self addPropertyForCar];
+    [self getPropertyOfCar];
     [self getInstanceMethod];
     [self testCategoryMethod];
 }
@@ -36,6 +40,8 @@
     NSLog(@"obj name -> %@",obj.name);
     [obj testMethod];
 }
+
+#pragma mark - 消息转发
 
 //消息转发机制
 - (void)testMessageForward {
@@ -50,6 +56,49 @@
     Person *alen = [Person new];
     NSString *returnString = ((NSString * (*)(id, SEL))(void *) objc_msgSend)((id)alen, @selector(normalRun));
     NSLog(@"return string -> %@",returnString);
+}
+
+#pragma mark - runtime方法
+
+//为car类添加property
+- (void)addPropertyForCar {
+    //1
+    Car *fit = [Car new];
+    objc_setAssociatedObject(fit, @selector(speed), @"80", OBJC_ASSOCIATION_COPY);
+    NSString *speed = objc_getAssociatedObject(fit, @selector(speed));
+    
+    NSLog(@"fit current speed -> %@",speed);
+    
+    //2
+    id carClass = objc_getClass("Car");
+    
+    @autoreleasepool {
+        objc_property_attribute_t type = { "T", [[NSString stringWithFormat:@"@\"%@\"",NSStringFromClass([NSString class])] UTF8String] }; //type
+        objc_property_attribute_t ownership0 = { "C", "" }; // C = copy
+        objc_property_attribute_t ownership = { "N", "" }; //N = nonatomic
+        objc_property_attribute_t backingivar  = { "V", [[NSString stringWithFormat:@"_%@", @"speed"] UTF8String] };  //variable name
+        objc_property_attribute_t attrs[] = { type, ownership0, ownership, backingivar };
+        
+        class_addProperty(carClass, "speed", attrs, 4);
+        
+        Ivar ivar = class_getInstanceVariable(carClass, "speed");
+        
+        object_setIvar(fit, ivar, @"90");
+        
+        NSLog(@"fit current speed -> %@", object_getIvar(fit, ivar));
+    }
+}
+
+//获取car类的property
+- (void)getPropertyOfCar {
+    id CarClass = objc_getClass("Car");
+    unsigned int outCountProperty;
+    objc_property_t *propertyList = class_copyPropertyList(CarClass, &outCountProperty);
+    for (int i = 0; i < outCountProperty; i++) {
+        objc_property_t property = propertyList[i];
+        NSLog(@"car property -> %s %s",property_getName(property), property_getAttributes(property));
+    }
+    free(propertyList);
 }
 
 //获取实体方法
