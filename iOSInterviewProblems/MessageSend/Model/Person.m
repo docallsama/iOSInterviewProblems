@@ -42,6 +42,10 @@ void run (id self, SEL _cmd) {
     return @"normal run";
 }
 
+- (void)innerMethod {
+    NSLog(@"using inner Method");
+}
+
 //第一次拦截
 //+ (BOOL)resolveInstanceMethod:(SEL)sel {
 //    if (sel == @selector(run)) {

@@ -26,6 +26,10 @@
     [self getClassProperty];
     [self addPropertyForCar];
     [self addInstanceVariableForCar];
+    
+    [self addMethodForCar];
+    [self getMethodsOfPerson];
+    [self replaceMethodOfPerson];
 }
 
 #pragma mark - 属性相关操作
@@ -116,6 +120,7 @@
         
         BOOL isSuccess = class_addProperty(carClass, "speed", attrs, 4);
         NSLog(@"is success -> %d",isSuccess);
+        
         //    console output:
         //    is success -> 1
     }
@@ -139,7 +144,64 @@
     }
 }
 
+#pragma mark - 方法相关操作
 
+//向car类添加方法
+- (void)addMethodForCar {
+    Class carClass = objc_getClass("Car");
+    BOOL isSuccess = class_addMethod(carClass, @selector(reverse), class_getMethodImplementation([self class], @selector(controllerReverse)), "v@:");
+    
+    if (isSuccess) {
+        Car *fit = [[Car alloc] init];
+        [fit performSelector:@selector(reverse) withObject:nil];
+    }
+}
+
+//添加的方法实现
+- (void)controllerReverse {
+    NSLog(@"car reverse");
+}
+
+//获取Person类的方法
+- (void)getMethodsOfPerson {
+    //获取实体方法
+    unsigned int outcountMethod;
+    id PersonClass = objc_getClass("Person");
+    Method *methods = class_copyMethodList(PersonClass, &outcountMethod);
+    for (int i = 0; i < outcountMethod; i++) {
+        Method method = methods[i];
+        SEL methodSEL = method_getName(method);
+        IMP implement = method_getImplementation(method);
+        const char *selName = sel_getName(methodSEL);
+        
+        if (methodSEL) {
+            NSLog(@"selector name -> %s", selName);
+        }
+    }
+    free(methods);
+    
+    // console output:
+    // selector name -> fakeRun
+    // selector name -> normalRun  iOSInterviewProblems`-[Person(MethodRun) normalRun] at Person+MethodRun.m:17
+    // selector name -> normalRun  iOSInterviewProblems`-[Person normalRun] at Person.m:40
+}
+
+//替换Person类的方法
+- (void)replaceMethodOfPerson {
+    Class PersonClass = objc_getClass("Person");
+    IMP replaceIMP = class_getMethodImplementation([self class], @selector(playFootBall:));
+    class_replaceMethod(PersonClass, @selector(innerMethod), replaceIMP, "v@:");
+
+    id person = [[PersonClass alloc] init];
+    [person performSelector:@selector(innerMethod) withObject:@"allen"];
+
+    // console output:
+    // allen is playing football
+}
+
+- (void)playFootBall:(NSString *)name {
+    NSLog(@"%@ is playing football",name);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
