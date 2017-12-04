@@ -46,11 +46,23 @@ void run (id self, SEL _cmd) {
     NSLog(@"using inner Method");
 }
 
+//原始方法
+- (void)originalMethodRun {
+    NSLog(@"perform original method run");
+}
+
+//替换的方法
+- (void)swizzledMethodRun {
+    NSLog(@"perform swizzled method run");
+}
+
+#pragma mark - 方法拦截
+
 //第一次拦截
 //+ (BOOL)resolveInstanceMethod:(SEL)sel {
 //    if (sel == @selector(run)) {
 //        //两种替换的方法
-//        
+//
 //        //方法1：使用C语言方法
 ////        class_addMethod(self, sel, (IMP)run, "v@:");
 //        

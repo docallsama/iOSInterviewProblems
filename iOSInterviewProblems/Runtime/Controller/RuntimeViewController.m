@@ -30,6 +30,7 @@
     [self addMethodForCar];
     [self getMethodsOfPerson];
     [self replaceMethodOfPerson];
+    [self replaceMethodOfPersonWithExistMethod];
 }
 
 #pragma mark - 属性相关操作
@@ -201,6 +202,20 @@
 
 - (void)playFootBall:(NSString *)name {
     NSLog(@"%@ is playing football",name);
+}
+
+//使用已有方法替换方法
+- (void)replaceMethodOfPersonWithExistMethod {
+    Class PersonClass = objc_getClass("Person");
+    Method originalMethod = class_getInstanceMethod(PersonClass, @selector(originalMethodRun));
+    Method swizzledMethod = class_getInstanceMethod(PersonClass, @selector(swizzledMethodRun));
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+    
+    id person = [[PersonClass alloc] init];
+    [person performSelector:@selector(originalMethodRun) withObject:nil];
+    
+    // console output:
+    // perform swizzled method run
 }
 
 - (void)didReceiveMemoryWarning {

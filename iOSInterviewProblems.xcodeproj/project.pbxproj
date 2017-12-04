@@ -21,6 +21,7 @@
 		CE757E8F1F8B49F4009354C0 /* NSString+Finder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E8E1F8B49F4009354C0 /* NSString+Finder.m */; };
 		CE757E921F8B7D2F009354C0 /* NSDictionary+DeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E911F8B7D2F009354C0 /* NSDictionary+DeepCopy.m */; };
 		CE757E9D1F8F637E009354C0 /* Person+MethodRun.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E9C1F8F637E009354C0 /* Person+MethodRun.m */; };
+		CE7E49541FCFB5EA0047F099 /* NSObject+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E49531FCFB5EA0047F099 /* NSObject+Conversion.m */; };
 		CE9E12FC1FB59233009D6E6C /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12F81FB59233009D6E6C /* Car.m */; };
 		CE9E12FD1FB59233009D6E6C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FA1FB59233009D6E6C /* Person.m */; };
 		CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FF1FB59250009D6E6C /* MessageSendViewController.m */; };
@@ -70,6 +71,8 @@
 		CE757E911F8B7D2F009354C0 /* NSDictionary+DeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DeepCopy.m"; sourceTree = "<group>"; };
 		CE757E9B1F8F637E009354C0 /* Person+MethodRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+MethodRun.h"; sourceTree = "<group>"; };
 		CE757E9C1F8F637E009354C0 /* Person+MethodRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+MethodRun.m"; sourceTree = "<group>"; };
+		CE7E49521FCFB5EA0047F099 /* NSObject+Conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Conversion.h"; sourceTree = "<group>"; };
+		CE7E49531FCFB5EA0047F099 /* NSObject+Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Conversion.m"; sourceTree = "<group>"; };
 		CE9E12F71FB59233009D6E6C /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		CE9E12F81FB59233009D6E6C /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		CE9E12F91FB59233009D6E6C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				CE757E911F8B7D2F009354C0 /* NSDictionary+DeepCopy.m */,
 				CE757E9B1F8F637E009354C0 /* Person+MethodRun.h */,
 				CE757E9C1F8F637E009354C0 /* Person+MethodRun.m */,
+				CE7E49521FCFB5EA0047F099 /* NSObject+Conversion.h */,
+				CE7E49531FCFB5EA0047F099 /* NSObject+Conversion.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA50CD51F78F0EA00453DBE /* ViewController.m in Sources */,
+				CE7E49541FCFB5EA0047F099 /* NSObject+Conversion.m in Sources */,
 				CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */,
 				CE9E12FD1FB59233009D6E6C /* Person.m in Sources */,
 				CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */,
