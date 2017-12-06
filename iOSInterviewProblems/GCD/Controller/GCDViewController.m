@@ -18,7 +18,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self getMainQueue];
     [self testCombine];
+}
+
+//各种处理队列
+- (void)getMainQueue {
+    //获取主线程队列
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    dispatch_async(mainQueue, ^{
+        NSLog(@"reading now");
+    });
+    
+    //获取global子线程队列
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(globalQueue, ^{
+        NSLog(@"get global queue");
+    });
+    
+    //获取global子线程队列
+    dispatch_queue_t backGroundGlobalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_async(backGroundGlobalQueue, ^{
+        NSLog(@"get background global queue");
+    });
+    
+    //创建自定义队列
+    dispatch_queue_t customQueue = dispatch_queue_create("com.uzai.testQueue", DISPATCH_QUEUE_CONCURRENT_WITH_AUTORELEASE_POOL);
+    dispatch_async(customQueue, ^{
+        NSLog(@"get custom queue");
+    });
+    
+    //创建自定义队列
+    dispatch_queue_t customSerialQueue = dispatch_queue_create("com.uzai.testSerialQueue", DISPATCH_QUEUE_SERIAL_WITH_AUTORELEASE_POOL);
+    dispatch_sync(customQueue, ^{
+        sleep(3);
+        NSLog(@"custom serial queue %@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(customQueue, ^{
+        sleep(5);
+        NSLog(@"custom serial queue 5 %@",[NSThread currentThread]);
+    });
 }
 
 //通过信号量控制多线程同步
