@@ -22,6 +22,7 @@
 		CE757E9D1F8F637E009354C0 /* Person+MethodRun.m in Sources */ = {isa = PBXBuildFile; fileRef = CE757E9C1F8F637E009354C0 /* Person+MethodRun.m */; };
 		CE7E49541FCFB5EA0047F099 /* NSObject+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E49531FCFB5EA0047F099 /* NSObject+Conversion.m */; };
 		CE7E49591FD682870047F099 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E49581FD682870047F099 /* GCDViewController.m */; };
+		CE7E495C1FD8D7FB0047F099 /* GCDSingletonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E495B1FD8D7FB0047F099 /* GCDSingletonModel.m */; };
 		CE9E12FC1FB59233009D6E6C /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12F81FB59233009D6E6C /* Car.m */; };
 		CE9E12FD1FB59233009D6E6C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FA1FB59233009D6E6C /* Person.m */; };
 		CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FF1FB59250009D6E6C /* MessageSendViewController.m */; };
@@ -73,6 +74,8 @@
 		CE7E49531FCFB5EA0047F099 /* NSObject+Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Conversion.m"; sourceTree = "<group>"; };
 		CE7E49571FD682870047F099 /* GCDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
 		CE7E49581FD682870047F099 /* GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		CE7E495A1FD8D7FB0047F099 /* GCDSingletonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDSingletonModel.h; sourceTree = "<group>"; };
+		CE7E495B1FD8D7FB0047F099 /* GCDSingletonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSingletonModel.m; sourceTree = "<group>"; };
 		CE9E12F71FB59233009D6E6C /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		CE9E12F81FB59233009D6E6C /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		CE9E12F91FB59233009D6E6C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 		CE7E49551FD682870047F099 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE7E495A1FD8D7FB0047F099 /* GCDSingletonModel.h */,
+				CE7E495B1FD8D7FB0047F099 /* GCDSingletonModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 				CEF8F9811FC7FB0000BB52EE /* Son.m in Sources */,
 				CE757E8F1F8B49F4009354C0 /* NSString+Finder.m in Sources */,
 				CEA50CE91F78F0F500453DBE /* AFormClass.m in Sources */,
+				CE7E495C1FD8D7FB0047F099 /* GCDSingletonModel.m in Sources */,
 				CE65FC4C1F9755A3008FF2B6 /* Book.m in Sources */,
 				CEF8F97E1FC7FAF700BB52EE /* Father.m in Sources */,
 				CE65FC4B1F9755A3008FF2B6 /* AuthorInfo.m in Sources */,
