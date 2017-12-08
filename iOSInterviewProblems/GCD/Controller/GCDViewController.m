@@ -8,6 +8,8 @@
 
 #import "GCDViewController.h"
 #import "GCDSingletonModel.h"
+#import "GCDMultiThreadModel.h"
+#import "Semaphore.h"
 
 @interface GCDViewController ()
 
@@ -19,11 +21,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self getMainQueue];
-    [self doMutipleTimesWork];
-    [self createSingletonModel];
-    [self testCombineWithSemaphore];
-    [self testCombineWithEnter];
+//    [self getMainQueue];
+//    [self doMutipleTimesWork];
+//    [self createSingletonModel];
+//    [self testCombineWithSemaphore];
+//    [self testCombineWithEnter];
+//    [self testMultipleThreadModel];
+//    [self testSemephore];
 }
 
 //各种处理队列
@@ -68,9 +72,11 @@
 //for循环block
 - (void)doMutipleTimesWork {
     dispatch_queue_t asyncQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_apply(5, asyncQueue, ^(size_t currentSize) {
-        NSLog(@"current size -> %zu",currentSize);
+    NSArray *wordsArray = @[@"GCD",@"NSOperations",@"NSOperationQueues",@"algorithms"];
+    dispatch_apply(wordsArray.count, asyncQueue, ^(size_t currentIndex) {
+        NSLog(@"current size -> %@",wordsArray[currentIndex]);
     });
+    NSLog(@"all applies are done");
 }
 
 //使用gcd创建单例
@@ -154,6 +160,49 @@
 //    2017-12-07 17:06:29.767 iOSInterviewProblems[65166:3996048] downloaded
 //    2017-12-07 17:06:29.767 iOSInterviewProblems[65166:3995950] all download done
     
+}
+
+- (void)testMultipleThreadModel {
+    GCDMultiThreadModel *model = [[GCDMultiThreadModel alloc] init];
+    model.modelName = @"default name";
+    
+    dispatch_queue_t queue1 = dispatch_queue_create("com.uzai.queue1", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue2 = dispatch_queue_create("com.uzai.queue2", DISPATCH_QUEUE_CONCURRENT);
+    
+    NSString *pic1URL = @"https://drscdn.500px.org/photo/179076899/q%3D80_m%3D1500/v2?webp=true&sig=919dceeaeb52aaf5fb146bd45462e76853452606cde129d74e3917d24d6b602f";
+    NSString *pic2URL = @"https://drscdn.500px.org/photo/190245269/m%3D2048/v2?webp=true&sig=346e27aec0b2bce24c470f472f2cb3df08f2b286b3c7a0ee7329455473aaa144";
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, 300, 300)];
+    [self.view addSubview:imageView];
+    
+    dispatch_async(queue1, ^{
+//        model.modelName = @"queue 1 changed";
+        [model setModelName:@"queue 1 changed"];
+        
+        [model setImgData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pic1URL]]];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+           NSLog(@"model.modelName -> %@",[model modelName]);
+           
+           UIImage *image = [UIImage imageWithData:[model imgData]];
+           imageView.image = image;
+        });
+    });
+    dispatch_async(queue2, ^{
+//        model.modelName = @"queue 2 changed";
+        [model setModelName:@"queue 2 changed"];
+        
+        [model setImgData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pic2URL]]];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+           NSLog(@"model.modelName -> %@",[model modelName]);
+            UIImage *image = [UIImage imageWithData:[model imgData]];
+            imageView.image = image;
+        });
+    });
+}
+
+- (void)testSemephore {
+    Semaphore *semaphore = [[Semaphore alloc] init];
+    [semaphore worker];
 }
 
 - (void)didReceiveMemoryWarning {
