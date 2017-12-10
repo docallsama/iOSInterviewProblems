@@ -33,6 +33,8 @@
     [self testDeepCopyWithDictionary];
     
 //    [self testFindStringInChapter];
+    
+    [self copyNSString];
 }
 
 //测试正则与for循环查找文字的速度
@@ -83,6 +85,17 @@
 }
 
 - (void)viewDidLayoutSubviews {
+    
+}
+
+- (void)copyNSString {
+    NSMutableString *mutableString = [[NSMutableString alloc] initWithString:@"432432"];
+    id mutablecopyString = [mutableString copy];
+    NSLog(@"string -> %@",[mutablecopyString class]);
+    
+    NSString *string = [NSString stringWithFormat:@"123123"];
+    id copyString = [string mutableCopy];
+    NSLog(@"string -> %@",[copyString class]);
     
 }
 
