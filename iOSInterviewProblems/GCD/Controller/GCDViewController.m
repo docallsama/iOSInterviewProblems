@@ -28,6 +28,7 @@
 //    [self testCombineWithEnter];
 //    [self testMultipleThreadModel];
 //    [self testSemephore];
+    [self testTimer];
 }
 
 //各种处理队列
@@ -203,6 +204,18 @@
 - (void)testSemephore {
     Semaphore *semaphore = [[Semaphore alloc] init];
     [semaphore worker];
+}
+
+- (void)testTimer {
+    self.timerCountDown = 0;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    self.timerSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(self.timerSource, dispatch_walltime(NULL, 0), 1 * NSEC_PER_SEC, 1 * NSEC_PER_SEC);
+    dispatch_source_set_event_handler(self.timerSource, ^{
+        self.timerCountDown++;
+        NSLog(@"printting now -> %d",self.timerCountDown);
+    });
+    dispatch_resume(self.timerSource);
 }
 
 - (void)didReceiveMemoryWarning {

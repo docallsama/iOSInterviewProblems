@@ -38,7 +38,6 @@
 		CEB2E86D1FB00DB300D32806 /* BlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB2E86C1FB00DB300D32806 /* BlocksViewController.m */; };
 		CEC86BCC1FD94A7D00032694 /* GCDMultiThreadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC86BCB1FD94A7D00032694 /* GCDMultiThreadModel.m */; };
 		CEC86BD21FDA7A4C00032694 /* Semaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC86BD11FDA7A4C00032694 /* Semaphore.m */; };
-		CEC86BD51FDA971500032694 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC86BD41FDA971500032694 /* GCDTimer.m */; };
 		CEF8F97B1FC7FAA300BB52EE /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F97A1FC7FAA300BB52EE /* RuntimeViewController.m */; };
 		CEF8F97E1FC7FAF700BB52EE /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F97D1FC7FAF700BB52EE /* Father.m */; };
 		CEF8F9811FC7FB0000BB52EE /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F9801FC7FB0000BB52EE /* Son.m */; };
@@ -107,8 +106,6 @@
 		CEC86BCB1FD94A7D00032694 /* GCDMultiThreadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDMultiThreadModel.m; sourceTree = "<group>"; };
 		CEC86BD01FDA7A4C00032694 /* Semaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Semaphore.h; sourceTree = "<group>"; };
 		CEC86BD11FDA7A4C00032694 /* Semaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Semaphore.m; sourceTree = "<group>"; };
-		CEC86BD31FDA971500032694 /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
-		CEC86BD41FDA971500032694 /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
 		CEF8F9791FC7FAA300BB52EE /* RuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
 		CEF8F97A1FC7FAA300BB52EE /* RuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
 		CEF8F97C1FC7FAF700BB52EE /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
@@ -243,8 +240,6 @@
 				CEC86BCB1FD94A7D00032694 /* GCDMultiThreadModel.m */,
 				CEC86BD01FDA7A4C00032694 /* Semaphore.h */,
 				CEC86BD11FDA7A4C00032694 /* Semaphore.m */,
-				CEC86BD31FDA971500032694 /* GCDTimer.h */,
-				CEC86BD41FDA971500032694 /* GCDTimer.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -464,7 +459,6 @@
 				CE7E49591FD682870047F099 /* GCDViewController.m in Sources */,
 				CE7E49541FCFB5EA0047F099 /* NSObject+Conversion.m in Sources */,
 				CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */,
-				CEC86BD51FDA971500032694 /* GCDTimer.m in Sources */,
 				CE9E12FD1FB59233009D6E6C /* Person.m in Sources */,
 				CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */,
 				CE29DCC51FB1669500184896 /* EXTScope.m in Sources */,

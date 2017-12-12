@@ -10,4 +10,7 @@
 
 @interface GCDViewController : UIViewController
 
+@property (nonatomic, strong) dispatch_source_t timerSource;
+@property (nonatomic, assign) int timerCountDown;
+
 @end
