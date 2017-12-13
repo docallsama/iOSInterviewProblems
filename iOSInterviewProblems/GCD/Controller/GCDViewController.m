@@ -26,9 +26,8 @@
 //    [self createSingletonModel];
 //    [self testCombineWithSemaphore];
 //    [self testCombineWithEnter];
-//    [self testMultipleThreadModel];
+    [self testMultipleThreadModel];
 //    [self testSemephore];
-    [self testTimer];
 }
 
 //各种处理队列
@@ -206,21 +205,47 @@
     [semaphore worker];
 }
 
-- (void)testTimer {
-    self.timerCountDown = 0;
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    self.timerSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    dispatch_source_set_timer(self.timerSource, dispatch_walltime(NULL, 0), 1 * NSEC_PER_SEC, 1 * NSEC_PER_SEC);
-    dispatch_source_set_event_handler(self.timerSource, ^{
-        self.timerCountDown++;
-        NSLog(@"printting now -> %d",self.timerCountDown);
-    });
-    dispatch_resume(self.timerSource);
+#pragma mark - GCDTimer
+
+- (IBAction)onClickGCDTimerStart:(UIButton *)sender {
+    if (self.timerSource == nil) {
+        self.timerCountDown = 0;
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        self.timerSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+        dispatch_source_set_timer(self.timerSource, dispatch_walltime(NULL, 0), 1 * NSEC_PER_SEC, 1 * NSEC_PER_SEC);
+        dispatch_source_set_event_handler(self.timerSource, ^{
+            self.timerCountDown++;
+            NSLog(@"printting now -> %d",self.timerCountDown);
+        });
+        dispatch_resume(self.timerSource);
+    }
+}
+
+- (IBAction)onClickGCDTimerResume:(UIButton *)sender {
+    if (self.timerSource) {
+        dispatch_resume(self.timerSource);
+    }
+}
+
+- (IBAction)onClickGCDTimerPause:(UIButton *)sender {
+    if (self.timerSource) {
+        dispatch_suspend(self.timerSource);
+    }
+}
+
+- (IBAction)onClickGCDTimerStop:(UIButton *)sender {
+    if (self.timerSource) {
+        dispatch_source_cancel(self.timerSource);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    NSLog(@"dealloc");
 }
 
 /*
