@@ -10,6 +10,7 @@
 
 @interface RunloopViewController : UIViewController
 
-@property (nonatomic,retain) NSTimer *timer;
+@property (nonatomic,strong) NSTimer *runloopTimer;
+@property (nonatomic,strong) NSThread *socketThread;
 
 @end
