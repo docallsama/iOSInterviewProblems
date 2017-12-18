@@ -27,11 +27,11 @@
     //与timer相关
 //    [self testScheduledTimer];
 //    [self testTimer];
-//    [self testRunlLoopTimer];
+    [self testRunlLoopTimer];
 //    [self testTimerWithFireDate];
     
     //自定义runloop
-    [self testCustomRunloop];
+//    [self testCustomRunloop];
 }
 
 #pragma mark - timer相关
@@ -85,14 +85,21 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self performSelector:@selector(invalidateRunLoopTimer) onThread:self.socketThread withObject:nil waitUntilDone:YES];
+    
+    //普通timer关闭
+    [self invalidateRunLoopTimer];
+    
+    //testCustomRunloop 关闭从thread启动的timer专用
+//    [self performSelector:@selector(invalidateRunLoopTimer) onThread:self.socketThread withObject:nil waitUntilDone:NO];
 }
 
 - (void)invalidateRunLoopTimer {
     NSLog(@"invalidate current thread -> %@",[NSThread currentThread]);
     [self.runloopTimer invalidate];
     self.runloopTimer = nil;
-    CFRunLoopStop(CFRunLoopGetCurrent());
+    
+    //testCustomRunloop 关闭从thread启动的timer专用
+//    CFRunLoopStop(CFRunLoopGetCurrent());
 }
 
 #pragma mark - 自定义runloop
