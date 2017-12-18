@@ -85,9 +85,14 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+    [self performSelector:@selector(invalidateRunLoopTimer) onThread:self.socketThread withObject:nil waitUntilDone:YES];
+}
+
+- (void)invalidateRunLoopTimer {
+    NSLog(@"invalidate current thread -> %@",[NSThread currentThread]);
     [self.runloopTimer invalidate];
     self.runloopTimer = nil;
+    CFRunLoopStop(CFRunLoopGetCurrent());
 }
 
 #pragma mark - 自定义runloop
@@ -102,7 +107,7 @@
     self.runloopTimer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(timerFiring) userInfo:nil repeats:YES];
     @autoreleasepool {
         [[NSRunLoop currentRunLoop] addTimer:self.runloopTimer forMode:NSDefaultRunLoopMode];
-        [[NSRunLoop currentRunLoop] run];
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }
 }
 
