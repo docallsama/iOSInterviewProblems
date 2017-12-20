@@ -10,8 +10,11 @@
 #import "TestLayoutView.h"
 #import "NSString+Finder.h"
 #import "NSDictionary+DeepCopy.h"
+#import "HitTestView.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    HitTestView *hitTestView;
+}
 
 @end
 
@@ -35,6 +38,8 @@
 //    [self testFindStringInChapter];
     
     [self copyNSString];
+    
+    [self createHitTestView];
 }
 
 //测试正则与for循环查找文字的速度
@@ -97,6 +102,25 @@
     id copyString = [string mutableCopy];
     NSLog(@"string -> %@",[copyString class]);
     
+}
+
+#pragma mark - hittest
+
+//hittestview上的button就算超出view的frame也会被捕获到
+- (void)createHitTestView {
+    hitTestView = [[HitTestView alloc] initWithFrame:CGRectMake(0, 350, 200, 60)];
+    hitTestView.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:hitTestView];
+    
+    UIButton *largeButton = [[UIButton alloc] initWithFrame:CGRectMake(100, -100, 50, 140)];
+    [largeButton addTarget:self action:@selector(onClickHittestButton) forControlEvents:UIControlEventTouchUpInside];
+    largeButton.backgroundColor = [UIColor blueColor];
+    [hitTestView addSubview:largeButton];
+    
+}
+
+- (void)onClickHittestButton {
+    NSLog(@"click hittest button");
 }
 
 - (void)didReceiveMemoryWarning {

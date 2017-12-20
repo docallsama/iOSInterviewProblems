@@ -10,6 +10,7 @@
 #import "GCDSingletonModel.h"
 #import "GCDMultiThreadModel.h"
 #import "Semaphore.h"
+#import "TestGCDAsyncModel.h"
 
 @interface GCDViewController ()
 
@@ -26,8 +27,9 @@
 //    [self createSingletonModel];
 //    [self testCombineWithSemaphore];
 //    [self testCombineWithEnter];
-    [self testMultipleThreadModel];
+//    [self testMultipleThreadModel];
 //    [self testSemephore];
+    [self testAsyncToSync];
 }
 
 //各种处理队列
@@ -203,6 +205,18 @@
 - (void)testSemephore {
     Semaphore *semaphore = [[Semaphore alloc] init];
     [semaphore worker];
+}
+
+//测试异步转同步
+- (void)testAsyncToSync {
+    TestGCDAsyncModel *testModel = [[TestGCDAsyncModel alloc] init];
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [testModel sendingAsyncConnect:^(NSString *testName) {
+        dispatch_semaphore_signal(semaphore);
+        NSLog(@"getting name -> %@",testName);
+        
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 }
 
 #pragma mark - GCDTimer

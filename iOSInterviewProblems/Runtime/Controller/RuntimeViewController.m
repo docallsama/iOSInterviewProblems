@@ -20,16 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self getInstanceVariable];
-    [self getSuperClassInstanceVariable];
-    [self getClassAllIvar];
-    [self getClassProperty];
-    [self addPropertyForCar];
-    [self addInstanceVariableForCar];
-    
-    [self addMethodForCar];
-    [self getMethodsOfPerson];
-    [self replaceMethodOfPerson];
+//    [self getInstanceVariable];
+//    [self getSuperClassInstanceVariable];
+//    [self getClassAllIvar];
+//    [self getClassProperty];
+//    [self addPropertyForCar];
+//    [self addInstanceVariableForCar];
+//    
+//    [self addMethodForCar];
+//    [self getMethodsOfPerson];
+//    [self replaceMethodOfPerson];
     [self replaceMethodOfPersonWithExistMethod];
 }
 
