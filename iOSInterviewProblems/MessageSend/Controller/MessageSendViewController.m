@@ -31,6 +31,8 @@
     [self getPropertyOfCar];
     [self getInstanceMethod];
     [self testCategoryMethod];
+    
+    [self testMagicSugar];
 }
 
 - (void)testRuntimeProperty {
@@ -124,6 +126,14 @@
         }
         free(methodList);
     }
+}
+
+//测试语法糖 使object支持objectForKeyedSubscript
+- (void)testMagicSugar {
+    Car *benz = [[Car alloc] init];
+    benz.model = @"benzi";
+    NSString *getterModel = benz[@"model"];
+    NSLog(@"benz model -> %@",getterModel);
 }
 
 - (void)didReceiveMemoryWarning {

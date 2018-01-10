@@ -22,4 +22,9 @@
     NSLog(@"object -> %@ name -> %@ isFull -> %d", object, name, isFull);
 }
 
+- (id)objectForKeyedSubscript:(NSString *)key {
+    NSLog(@"key -> %@",key);
+    return @"bar";
+}
+
 @end

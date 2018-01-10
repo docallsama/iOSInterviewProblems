@@ -23,13 +23,13 @@
     // Do any additional setup after loading the view.
     
 //    [self getMainQueue];
-//    [self doMutipleTimesWork];
+    [self doMutipleTimesWork];
 //    [self createSingletonModel];
 //    [self testCombineWithSemaphore];
 //    [self testCombineWithEnter];
 //    [self testMultipleThreadModel];
 //    [self testSemephore];
-    [self testAsyncToSync];
+//    [self testAsyncToSync];
 }
 
 //各种处理队列
@@ -76,7 +76,7 @@
     dispatch_queue_t asyncQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     NSArray *wordsArray = @[@"GCD",@"NSOperations",@"NSOperationQueues",@"algorithms"];
     dispatch_apply(wordsArray.count, asyncQueue, ^(size_t currentIndex) {
-        NSLog(@"current size -> %@",wordsArray[currentIndex]);
+        NSLog(@"current size -> %@ current thread -> %@",wordsArray[currentIndex],[NSThread currentThread]);
     });
     NSLog(@"all applies are done");
 }

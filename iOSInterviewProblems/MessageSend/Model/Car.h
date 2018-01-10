@@ -18,4 +18,6 @@
 
 - (void)methodWithObject:(NSString *)object andName:(NSString *)name andIsFull:(BOOL) isFull;
 
+- (id)objectForKeyedSubscript:(NSString *)key;
+
 @end
