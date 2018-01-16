@@ -40,6 +40,7 @@
     [self copyNSString];
     
     [self createHitTestView];
+    [self removeHitTestViewAfterDelay];
 }
 
 //测试正则与for循环查找文字的速度
@@ -121,6 +122,12 @@
 
 - (void)onClickHittestButton {
     NSLog(@"click hittest button");
+}
+
+- (void)removeHitTestViewAfterDelay {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [hitTestView removeFromSuperview];
+    });
 }
 
 - (void)didReceiveMemoryWarning {

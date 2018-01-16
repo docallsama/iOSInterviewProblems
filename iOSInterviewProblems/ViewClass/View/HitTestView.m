@@ -10,6 +10,15 @@
 
 @implementation HitTestView
 
+//等同于UIViewcontroller 的 viewdiddisappear
+- (void)didMoveToSuperview;
+{
+    [super didMoveToSuperview];
+    
+    if (!self.superview) {
+        NSLog(@"remove from superview");
+    }
+}
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     if (self.clipsToBounds) {
