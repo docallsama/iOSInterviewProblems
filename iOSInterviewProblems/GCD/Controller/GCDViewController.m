@@ -23,13 +23,14 @@
     // Do any additional setup after loading the view.
     
 //    [self getMainQueue];
-    [self doMutipleTimesWork];
+//    [self doMutipleTimesWork];
 //    [self createSingletonModel];
 //    [self testCombineWithSemaphore];
 //    [self testCombineWithEnter];
 //    [self testMultipleThreadModel];
 //    [self testSemephore];
 //    [self testAsyncToSync];
+    [self testMultiTask];
 }
 
 //各种处理队列
@@ -251,6 +252,25 @@
     if (self.timerSource) {
         dispatch_source_cancel(self.timerSource);
     }
+}
+
+//添加10个任务
+- (void)testMultiTask {
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_queue_t queue = dispatch_queue_create("com.uzai.queue", DISPATCH_QUEUE_CONCURRENT);
+//    dispatch_queue_t queue = dispatch_queue_create("com.uzai.queue", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(queue, ^{
+        sleep(3);
+        NSLog(@"task 1 current thread -> %@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        sleep(1);
+        NSLog(@"task 2 current thread -> %@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        sleep(2);
+        NSLog(@"task 3 current thread -> %@",[NSThread currentThread]);
+    });
 }
 
 - (void)didReceiveMemoryWarning {
