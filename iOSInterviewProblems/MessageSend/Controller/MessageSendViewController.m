@@ -24,15 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self testRuntimeProperty];
+//    [self testRuntimeProperty];
     [self testMessageForward];
-    [self testMessageSend];
-    
-    [self getPropertyOfCar];
-    [self getInstanceMethod];
-    [self testCategoryMethod];
-    
-    [self testMagicSugar];
+//    [self testMessageSend];
+
+//    [self getPropertyOfCar];
+//    [self getInstanceMethod];
+//    [self testCategoryMethod];
+
+//    [self testMagicSugar];
 }
 
 - (void)testRuntimeProperty {
@@ -48,8 +48,10 @@
 - (void)testMessageForward {
     Person *alen = [Person new];
     
-    [alen run];
-    //    [Person instanceRun];
+//    [alen run];
+    alen.delegate = self;
+    [alen performSelector:@selector(feelingGood)];
+//        [Person instanceRun];
 }
 
 //消息传递
@@ -134,6 +136,10 @@
     benz.model = @"benzi";
     NSString *getterModel = benz[@"model"];
     NSLog(@"benz model -> %@",getterModel);
+}
+
+- (void)feelingGood {
+    NSLog(@"vc is feeling good");
 }
 
 - (void)didReceiveMemoryWarning {

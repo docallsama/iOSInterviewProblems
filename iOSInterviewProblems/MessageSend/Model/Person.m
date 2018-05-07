@@ -74,42 +74,50 @@ void run (id self, SEL _cmd) {
 //}
 
 //第二次拦截
-//- (id)forwardingTargetForSelector:(SEL)aSelector {
-//    
-//    return self;
-//}
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+
+    return self.delegate;
+}
 
 //第三次拦截
-- (void)forwardInvocation:(NSInvocation *)anInvocation {
-    SEL selector = [anInvocation selector];
-    if ([jeep methodSignatureForSelector:selector]) {
-        [anInvocation invokeWithTarget:jeep];
-    } else {
-        [super forwardInvocation:anInvocation];
-    }
-}
+//- (void)forwardInvocation:(NSInvocation *)anInvocation {
+//    SEL selector = [anInvocation selector];
+//    if ([jeep methodSignatureForSelector:selector]) {
+//        [anInvocation invokeWithTarget:jeep];
+//    } else {
+//        [super forwardInvocation:anInvocation];
+//    }
+//}
+//
+//+ (void)forwardInvocation:(NSInvocation *)anInvocation {
+//    SEL selector = [anInvocation selector];
+//    if ([Car methodSignatureForSelector:selector]) {
+//
+//    } else {
+//        [super forwardInvocation:anInvocation];
+//    }
+//}
+//
+//- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+//    NSMethodSignature *signature = [jeep methodSignatureForSelector:aSelector];
+//    // invocation 有2个隐藏参数，所以 argument 从2开始
+//    NSLog(@"now calling -> %@ \n numberOfArguments -> %zd \n returnType -> %@", NSStringFromSelector(aSelector), signature.numberOfArguments - 2, [[NSString alloc] initWithUTF8String:signature.methodReturnType]);
+//    return signature;
+//}
+//
+//+ (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+//    NSLog(@"now calling -> %@",NSStringFromSelector(aSelector));
+//    NSMethodSignature *signature = [Car methodSignatureForSelector:aSelector];
+////    NSMethodSignature *signature = [Car instanceMethodSignatureForSelector:aSelector];
+//    return signature;
+//}
 
-+ (void)forwardInvocation:(NSInvocation *)anInvocation {
-    SEL selector = [anInvocation selector];
-    if ([Car methodSignatureForSelector:selector]) {
+- (BOOL)respondsToSelector:(SEL)aSelector {
+    if (self.delegate) {
         
-    } else {
-        [super forwardInvocation:anInvocation];
+        return [self.delegate respondsToSelector:aSelector];
     }
-}
-
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    NSMethodSignature *signature = [jeep methodSignatureForSelector:aSelector];
-    // invocation 有2个隐藏参数，所以 argument 从2开始
-    NSLog(@"now calling -> %@ \n numberOfArguments -> %zd \n returnType -> %@", NSStringFromSelector(aSelector), signature.numberOfArguments - 2, [[NSString alloc] initWithUTF8String:signature.methodReturnType]);
-    return signature;
-}
-
-+ (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    NSLog(@"now calling -> %@",NSStringFromSelector(aSelector));
-    NSMethodSignature *signature = [Car methodSignatureForSelector:aSelector];
-//    NSMethodSignature *signature = [Car instanceMethodSignatureForSelector:aSelector];
-    return signature;
+    return NO;
 }
 
 @end

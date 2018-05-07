@@ -10,6 +10,8 @@
 
 @interface Person : NSObject
 
+@property (nonatomic,strong) id delegate;
+
 //未实现的实例run
 - (void)run;
 

@@ -13,6 +13,8 @@
 
 @interface RuntimeViewController ()
 
+@property (nonatomic, assign)Car *deBenz;
+
 @end
 
 @implementation RuntimeViewController
@@ -30,7 +32,9 @@
 //    [self addMethodForCar];
 //    [self getMethodsOfPerson];
 //    [self replaceMethodOfPerson];
-    [self replaceMethodOfPersonWithExistMethod];
+//    [self replaceMethodOfPersonWithExistMethod];
+    
+    [self personWithUnkownMethod];
 }
 
 #pragma mark - 属性相关操作
@@ -216,6 +220,12 @@
     
     // console output:
     // perform swizzled method run
+}
+
+- (void)personWithUnkownMethod {
+    self.deBenz = [[Car alloc] init];
+//    [car performSelector:@selector(run) withObject:nil];
+    [self.deBenz run];
 }
 
 - (void)didReceiveMemoryWarning {

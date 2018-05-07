@@ -30,7 +30,8 @@
 //    [self testMultipleThreadModel];
 //    [self testSemephore];
 //    [self testAsyncToSync];
-    [self testMultiTask];
+//    [self testMultiTask];
+    [self testSyncSerialCallInAsyncSerial];
 }
 
 //各种处理队列
@@ -271,6 +272,11 @@
         sleep(2);
         NSLog(@"task 3 current thread -> %@",[NSThread currentThread]);
     });
+}
+
+//同步串行在异步串行队列中调用
+- (void)testSyncSerialCallInAsyncSerial {
+    
 }
 
 - (void)didReceiveMemoryWarning {
