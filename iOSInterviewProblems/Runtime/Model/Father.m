@@ -25,7 +25,7 @@
 }
 
 - (void)doWork {
-    
+    NSLog(@"father doing work");
 }
 
 @end

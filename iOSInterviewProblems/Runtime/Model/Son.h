@@ -13,4 +13,6 @@
 
 @property (nonatomic, copy) NSString *bikeName;
 
+- (void)configWhoIam;
+
 @end

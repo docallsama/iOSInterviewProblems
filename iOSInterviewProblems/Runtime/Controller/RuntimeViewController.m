@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self getInstanceVariable];
+    [self getInstanceVariable];
 //    [self getSuperClassInstanceVariable];
 //    [self getClassAllIvar];
 //    [self getClassProperty];
@@ -34,7 +34,7 @@
 //    [self replaceMethodOfPerson];
 //    [self replaceMethodOfPersonWithExistMethod];
     
-    [self personWithUnkownMethod];
+//    [self personWithUnkownMethod];
 }
 
 #pragma mark - 属性相关操作
@@ -42,6 +42,8 @@
 //获取类的成员变量
 - (void)getInstanceVariable {
     Son *son = [[Son alloc] init];
+    [son doWork];   //father doing work
+    [son configWhoIam];
     
     id sonClass = objc_getClass("Son");
     Ivar sonProperty = class_getInstanceVariable(sonClass, "teacher");

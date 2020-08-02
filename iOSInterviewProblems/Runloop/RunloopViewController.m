@@ -108,6 +108,10 @@
     self.socketThread = [[NSThread alloc] initWithTarget:self selector:@selector(socketMethod) object:nil];
     self.socketThread.name = @"com.uzai.socketThread";
     [self.socketThread start];
+    
+    self.socketThread = [[NSThread alloc] initWithBlock:^{
+        
+    }];
 }
 
 - (void)socketMethod {
