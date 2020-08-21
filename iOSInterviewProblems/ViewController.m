@@ -41,6 +41,8 @@
     
     [self createHitTestView];
     [self removeHitTestViewAfterDelay];
+    
+    [self createButtonWithGesture];
 }
 
 //测试正则与for循环查找文字的速度
@@ -128,6 +130,31 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [hitTestView removeFromSuperview];
     });
+}
+
+#pragma mark - responder
+
+//按钮上再添加 tapgesture 之后，只相应 tapgesture 的点击事件
+- (void)createButtonWithGesture
+{
+    UIButton *testButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    testButton.backgroundColor = [UIColor purpleColor];
+    testButton.frame = CGRectMake(300, 350, 200, 60);
+    [testButton addTarget:self action:@selector(onClickTestButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:testButton];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickTapGesture)];
+    [testButton addGestureRecognizer:tapRecognizer];
+}
+
+- (void)onClickTestButton
+{
+    NSLog(@"did select test button");
+}
+
+- (void)onClickTapGesture
+{
+    NSLog(@"did select tap gesture");
 }
 
 - (void)didReceiveMemoryWarning {
