@@ -10,6 +10,7 @@
 #import "Son.h"
 #import "Father.h"
 #import "Car.h"
+#import "Student.h"
 
 @interface RuntimeViewController ()
 
@@ -22,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self getInstanceVariable];
+//    [self getInstanceVariable];
 //    [self getSuperClassInstanceVariable];
 //    [self getClassAllIvar];
 //    [self getClassProperty];
@@ -32,7 +33,7 @@
 //    [self addMethodForCar];
 //    [self getMethodsOfPerson];
 //    [self replaceMethodOfPerson];
-//    [self replaceMethodOfPersonWithExistMethod];
+    [self replaceMethodOfPersonWithExistMethod];
     
 //    [self personWithUnkownMethod];
 }
@@ -222,6 +223,12 @@
     
     // console output:
     // perform swizzled method run
+    
+    Student *student = [[Student alloc] init];
+    [student performSelector:@selector(originalMethodRun) withObject:nil];
+    // console output:
+    // perform swizzled method run
+    //替换了方法之后，继承的类再调用方法，还是访问父类的方法实现，只是替换了方法列表中的方法实现
 }
 
 - (void)personWithUnkownMethod {

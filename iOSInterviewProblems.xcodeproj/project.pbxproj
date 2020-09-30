@@ -26,6 +26,7 @@
 		CE7E49541FCFB5EA0047F099 /* NSObject+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E49531FCFB5EA0047F099 /* NSObject+Conversion.m */; };
 		CE7E49591FD682870047F099 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E49581FD682870047F099 /* GCDViewController.m */; };
 		CE7E495C1FD8D7FB0047F099 /* GCDSingletonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E495B1FD8D7FB0047F099 /* GCDSingletonModel.m */; };
+		CE817584252472B800A68C63 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CE817583252472B800A68C63 /* Student.m */; };
 		CE9E12FC1FB59233009D6E6C /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12F81FB59233009D6E6C /* Car.m */; };
 		CE9E12FD1FB59233009D6E6C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FA1FB59233009D6E6C /* Person.m */; };
 		CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FF1FB59250009D6E6C /* MessageSendViewController.m */; };
@@ -43,6 +44,8 @@
 		CEC86BCC1FD94A7D00032694 /* GCDMultiThreadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC86BCB1FD94A7D00032694 /* GCDMultiThreadModel.m */; };
 		CEC86BD21FDA7A4C00032694 /* Semaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC86BD11FDA7A4C00032694 /* Semaphore.m */; };
 		CED419151FEA3D2A002E791C /* TestGCDAsyncModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CED419141FEA3D2A002E791C /* TestGCDAsyncModel.m */; };
+		CED9708B24F4E81A000CDFB5 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED9708A24F4E81A000CDFB5 /* NotificationViewController.m */; };
+		CED9708F24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */; };
 		CEF8F97B1FC7FAA300BB52EE /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F97A1FC7FAA300BB52EE /* RuntimeViewController.m */; };
 		CEF8F97E1FC7FAF700BB52EE /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F97D1FC7FAF700BB52EE /* Father.m */; };
 		CEF8F9811FC7FB0000BB52EE /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F9801FC7FB0000BB52EE /* Son.m */; };
@@ -89,6 +92,8 @@
 		CE7E49581FD682870047F099 /* GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
 		CE7E495A1FD8D7FB0047F099 /* GCDSingletonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDSingletonModel.h; sourceTree = "<group>"; };
 		CE7E495B1FD8D7FB0047F099 /* GCDSingletonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSingletonModel.m; sourceTree = "<group>"; };
+		CE817582252472B800A68C63 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		CE817583252472B800A68C63 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		CE9E12F71FB59233009D6E6C /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		CE9E12F81FB59233009D6E6C /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		CE9E12F91FB59233009D6E6C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -121,6 +126,10 @@
 		CEC86BD11FDA7A4C00032694 /* Semaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Semaphore.m; sourceTree = "<group>"; };
 		CED419131FEA3D2A002E791C /* TestGCDAsyncModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestGCDAsyncModel.h; sourceTree = "<group>"; };
 		CED419141FEA3D2A002E791C /* TestGCDAsyncModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestGCDAsyncModel.m; sourceTree = "<group>"; };
+		CED9708924F4E81A000CDFB5 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		CED9708A24F4E81A000CDFB5 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		CED9708D24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomIntensityVisualEffectView.h; sourceTree = "<group>"; };
+		CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomIntensityVisualEffectView.m; sourceTree = "<group>"; };
 		CEF8F9791FC7FAA300BB52EE /* RuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
 		CEF8F97A1FC7FAA300BB52EE /* RuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
 		CEF8F97C1FC7FAF700BB52EE /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
@@ -321,6 +330,8 @@
 				CE9E12F81FB59233009D6E6C /* Car.m */,
 				CE9E12F91FB59233009D6E6C /* Person.h */,
 				CE9E12FA1FB59233009D6E6C /* Person.m */,
+				CE817582252472B800A68C63 /* Student.h */,
+				CE817583252472B800A68C63 /* Student.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,6 +368,7 @@
 				CEA50CD11F78F0EA00453DBE /* AppDelegate.m */,
 				CEA50CD31F78F0EA00453DBE /* ViewController.h */,
 				CEA50CD41F78F0EA00453DBE /* ViewController.m */,
+				CED9708724F4E6FA000CDFB5 /* Notification */,
 				A7DE4C4624D6DB27006DBA60 /* PerformSelector */,
 				CE29524D1FE8C13D00B1BBF1 /* ViewClass */,
 				A74A81431FB47449000BFAC0 /* GCD */,
@@ -416,6 +428,33 @@
 				CEB2E86C1FB00DB300D32806 /* BlocksViewController.m */,
 			);
 			path = Blocks;
+			sourceTree = "<group>";
+		};
+		CED9708724F4E6FA000CDFB5 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				CED9708C24F75AAD000CDFB5 /* View */,
+				CED9708824F4E7EE000CDFB5 /* Controller */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		CED9708824F4E7EE000CDFB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CED9708924F4E81A000CDFB5 /* NotificationViewController.h */,
+				CED9708A24F4E81A000CDFB5 /* NotificationViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CED9708C24F75AAD000CDFB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CED9708D24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.h */,
+				CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CEF55CEB1FE1274300541D78 /* Runloop */ = {
@@ -534,6 +573,7 @@
 				CE7E49541FCFB5EA0047F099 /* NSObject+Conversion.m in Sources */,
 				CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */,
 				CEA2DC001FE2087B00592FDA /* RunloopViewController.m in Sources */,
+				CED9708B24F4E81A000CDFB5 /* NotificationViewController.m in Sources */,
 				CE9E12FD1FB59233009D6E6C /* Person.m in Sources */,
 				CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */,
 				CE29DCC51FB1669500184896 /* EXTScope.m in Sources */,
@@ -545,6 +585,7 @@
 				CE757E921F8B7D2F009354C0 /* NSDictionary+DeepCopy.m in Sources */,
 				CE757E9D1F8F637E009354C0 /* Person+MethodRun.m in Sources */,
 				CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */,
+				CED9708F24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m in Sources */,
 				CE757E8C1F8B2196009354C0 /* NSObject+MethodB.m in Sources */,
 				CE29DCC81FB19E9B00184896 /* EXTRuntimeExtensions.m in Sources */,
 				CEF8F97B1FC7FAA300BB52EE /* RuntimeViewController.m in Sources */,
@@ -560,6 +601,7 @@
 				CE65FC4C1F9755A3008FF2B6 /* Book.m in Sources */,
 				CEF8F97E1FC7FAF700BB52EE /* Father.m in Sources */,
 				CE65FC4B1F9755A3008FF2B6 /* AuthorInfo.m in Sources */,
+				CE817584252472B800A68C63 /* Student.m in Sources */,
 				CEA50CCF1F78F0EA00453DBE /* main.m in Sources */,
 				CE9E12FC1FB59233009D6E6C /* Car.m in Sources */,
 				CE65FC4A1F9755A3008FF2B6 /* TestKVViewController.m in Sources */,

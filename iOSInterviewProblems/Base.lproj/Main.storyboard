@@ -195,6 +195,26 @@
                                             <segue destination="CFq-rL-KMN" kind="show" id="W2l-K4-q09"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="y7Q-bv-3fC">
+                                        <rect key="frame" x="0.0" y="380" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y7Q-bv-3fC" id="ZSr-1C-jQh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH5-hx-1m0">
+                                                    <rect key="frame" x="8" y="12" width="88" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IJq-nZ-nfX" kind="show" id="qDQ-Fr-E9Q"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -420,6 +440,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blJ-Wh-qh9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36" y="3604"/>
+        </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="Rny-Fk-Hlw">
+            <objects>
+                <viewController id="IJq-nZ-nfX" customClass="NotificationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wkB-kg-8Hv"/>
+                        <viewControllerLayoutGuide type="bottom" id="XwA-cv-dYp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vaZ-Nl-Q4a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1ZQ-eN-feb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HvV-jN-SqB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="4279"/>
         </scene>
     </scenes>
     <resources>

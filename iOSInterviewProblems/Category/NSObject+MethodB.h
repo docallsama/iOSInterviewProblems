@@ -12,4 +12,6 @@
 
 - (void)testMethod;
 
++ (void)load;
+
 @end

@@ -14,4 +14,9 @@
     NSLog(@"Method B called");
 }
 
++ (void)load
+{
+    NSLog(@"load now");
+}
+
 @end

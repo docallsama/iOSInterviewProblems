@@ -40,7 +40,7 @@
     [self copyNSString];
     
     [self createHitTestView];
-    [self removeHitTestViewAfterDelay];
+//    [self removeHitTestViewAfterDelay];
     
     [self createButtonWithGesture];
 }

@@ -38,6 +38,7 @@ typedef BOOL (^AuthorNameCheck)(NSString *name);
     [self checkAuthorNameBlock];
     
     [self cancelBlock];
+    [self testChangeValueOnBlock];
 }
 
 //
@@ -133,6 +134,24 @@ typedef BOOL (^AuthorNameCheck)(NSString *name);
             [self checkDescription];
         }
     };
+}
+
+- (void)testChangeValueOnBlock
+{
+    int i = 10;
+    static int m = 100;
+    NSMutableArray *mArray = [NSMutableArray arrayWithObjects:@"1",@"2", nil];
+    void (^blk)(void) = ^{
+    NSLog(@"In block, i = %d", i);
+    NSLog(@"In block, m = %d", m);
+        for (NSString *str in mArray) {
+            NSLog(@"In block, str = %@", str);
+        }
+    };
+    i = 20;
+    m = 200;
+    [mArray addObject:@"3"];
+    blk();
 }
 
 - (void)didReceiveMemoryWarning {

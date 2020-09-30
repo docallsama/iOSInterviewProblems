@@ -24,8 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self testRuntimeProperty];
-    [self testMessageForward];
+    [self testRuntimeProperty];
+//    [self testMessageForward];
 //    [self testMessageSend];
 
 //    [self getPropertyOfCar];
