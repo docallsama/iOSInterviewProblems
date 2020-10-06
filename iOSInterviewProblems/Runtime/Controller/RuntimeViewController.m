@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self getInstanceVariable];
+    [self getInstanceVariable];
 //    [self getSuperClassInstanceVariable];
 //    [self getClassAllIvar];
 //    [self getClassProperty];
@@ -33,7 +33,7 @@
 //    [self addMethodForCar];
 //    [self getMethodsOfPerson];
 //    [self replaceMethodOfPerson];
-    [self replaceMethodOfPersonWithExistMethod];
+//    [self replaceMethodOfPersonWithExistMethod];
     
 //    [self personWithUnkownMethod];
 }

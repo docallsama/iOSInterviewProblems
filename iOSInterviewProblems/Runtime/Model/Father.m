@@ -28,4 +28,9 @@
     NSLog(@"father doing work");
 }
 
+//- (Class)class
+//{
+//    return NSClassFromString(@"Car");
+//}
+
 @end
