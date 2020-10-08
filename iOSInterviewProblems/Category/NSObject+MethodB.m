@@ -16,7 +16,7 @@
 
 + (void)load
 {
-    NSLog(@"load now");
+    NSLog(@"load B now");
 }
 
 @end

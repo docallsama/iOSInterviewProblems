@@ -12,6 +12,8 @@
 
 - (void)testMethod;
 
++ (void)load;
+
 @property (nonatomic, copy)NSString *name;
 
 @end

@@ -15,6 +15,11 @@
     NSLog(@"Method A called");
 }
 
++ (void)load
+{
+    NSLog(@"load A now");
+}
+
 - (void)setName:(NSString *)name {
     objc_setAssociatedObject(self, @selector(name), name, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A781E9AE252EBD5F001D0A54 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A781E9AD252EBD5F001D0A54 /* TestObject.m */; };
 		A7DE4C4A24D6DCBB006DBA60 /* PerformSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DE4C4924D6DCBB006DBA60 /* PerformSelectorViewController.m */; };
 		A7DE4C5124D6DD7B006DBA60 /* PerformedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DE4C5024D6DD7B006DBA60 /* PerformedObject.m */; };
 		CE2952511FE8C15200B1BBF1 /* HitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2952501FE8C15100B1BBF1 /* HitTestView.m */; };
@@ -52,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A781E9AC252EBD5F001D0A54 /* TestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObject.h; sourceTree = "<group>"; };
+		A781E9AD252EBD5F001D0A54 /* TestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObject.m; sourceTree = "<group>"; };
 		A7DE4C4824D6DCBB006DBA60 /* PerformSelectorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerformSelectorViewController.h; sourceTree = "<group>"; };
 		A7DE4C4924D6DCBB006DBA60 /* PerformSelectorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerformSelectorViewController.m; sourceTree = "<group>"; };
 		A7DE4C4F24D6DD7B006DBA60 /* PerformedObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerformedObject.h; sourceTree = "<group>"; };
@@ -426,6 +429,8 @@
 			children = (
 				CEB2E86B1FB00DB300D32806 /* BlocksViewController.h */,
 				CEB2E86C1FB00DB300D32806 /* BlocksViewController.m */,
+				A781E9AC252EBD5F001D0A54 /* TestObject.h */,
+				A781E9AD252EBD5F001D0A54 /* TestObject.m */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
@@ -584,13 +589,14 @@
 				CEB2E86D1FB00DB300D32806 /* BlocksViewController.m in Sources */,
 				CE757E921F8B7D2F009354C0 /* NSDictionary+DeepCopy.m in Sources */,
 				CE757E9D1F8F637E009354C0 /* Person+MethodRun.m in Sources */,
+				A781E9AE252EBD5F001D0A54 /* TestObject.m in Sources */,
 				CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */,
 				CED9708F24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m in Sources */,
+				CE757E891F8B218A009354C0 /* NSObject+MethodA.m in Sources */,
 				CE757E8C1F8B2196009354C0 /* NSObject+MethodB.m in Sources */,
 				CE29DCC81FB19E9B00184896 /* EXTRuntimeExtensions.m in Sources */,
 				CEF8F97B1FC7FAA300BB52EE /* RuntimeViewController.m in Sources */,
 				CED419151FEA3D2A002E791C /* TestGCDAsyncModel.m in Sources */,
-				CE757E891F8B218A009354C0 /* NSObject+MethodA.m in Sources */,
 				CEC86BCC1FD94A7D00032694 /* GCDMultiThreadModel.m in Sources */,
 				CEA50CEA1F78F0F500453DBE /* BFormClass.m in Sources */,
 				CEF8F9811FC7FB0000BB52EE /* Son.m in Sources */,

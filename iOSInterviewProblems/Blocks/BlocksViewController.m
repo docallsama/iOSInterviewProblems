@@ -39,6 +39,7 @@ typedef BOOL (^AuthorNameCheck)(NSString *name);
     
     [self cancelBlock];
     [self testChangeValueOnBlock];
+    [self blockTest];
 }
 
 //
@@ -152,6 +153,52 @@ typedef BOOL (^AuthorNameCheck)(NSString *name);
     m = 200;
     [mArray addObject:@"3"];
     blk();
+    
+    
+    NSMutableArray * arr = [NSMutableArray arrayWithObjects:@"1",@"2", nil];
+        
+    void(^block)(void) = ^{
+        
+        NSLog(@"arr -> %@",arr);//局部变量
+    };
+    
+    [arr addObject:@"3"];
+    
+    arr = nil;
+    
+    block();
+    
+    
+}
+
+static NSInteger num3 = 300;
+
+NSInteger num4 = 3000;
+
+- (void)blockTest
+{
+    NSInteger num = 30;
+    
+    static NSInteger num2 = 3;
+    
+    __block NSInteger num5 = 30000;
+    
+    void(^block)(void) = ^{
+        
+        NSLog(@"%zd",num);//局部变量 不可变，值截获
+        
+        NSLog(@"%zd",num2);//静态变量 可改变，指针截获
+        
+        NSLog(@"%zd",num3);//全局变量 可改变，不截获直接取值
+        
+        NSLog(@"%zd",num4);//全局静态变量 可改变，不截获直接取值
+        
+        NSLog(@"%zd",num5);//__block修饰变量
+    };
+    
+    num5 = 5;
+    
+    block();
 }
 
 - (void)didReceiveMemoryWarning {
