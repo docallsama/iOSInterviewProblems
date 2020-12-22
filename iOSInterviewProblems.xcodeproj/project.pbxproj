@@ -10,6 +10,7 @@
 		A781E9AE252EBD5F001D0A54 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A781E9AD252EBD5F001D0A54 /* TestObject.m */; };
 		A7DE4C4A24D6DCBB006DBA60 /* PerformSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DE4C4924D6DCBB006DBA60 /* PerformSelectorViewController.m */; };
 		A7DE4C5124D6DD7B006DBA60 /* PerformedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DE4C5024D6DD7B006DBA60 /* PerformedObject.m */; };
+		CE0F074A25921B300042FC8C /* MethodCallResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0F074925921B300042FC8C /* MethodCallResultViewController.m */; };
 		CE2952511FE8C15200B1BBF1 /* HitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2952501FE8C15100B1BBF1 /* HitTestView.m */; };
 		CE29DCC51FB1669500184896 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = CE29DCC21FB1669500184896 /* EXTScope.m */; };
 		CE29DCC81FB19E9B00184896 /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE29DCC71FB19E9B00184896 /* EXTRuntimeExtensions.m */; };
@@ -59,6 +60,8 @@
 		A7DE4C4924D6DCBB006DBA60 /* PerformSelectorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerformSelectorViewController.m; sourceTree = "<group>"; };
 		A7DE4C4F24D6DD7B006DBA60 /* PerformedObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerformedObject.h; sourceTree = "<group>"; };
 		A7DE4C5024D6DD7B006DBA60 /* PerformedObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerformedObject.m; sourceTree = "<group>"; };
+		CE0F074825921B300042FC8C /* MethodCallResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodCallResultViewController.h; sourceTree = "<group>"; };
+		CE0F074925921B300042FC8C /* MethodCallResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodCallResultViewController.m; sourceTree = "<group>"; };
 		CE29524F1FE8C15100B1BBF1 /* HitTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HitTestView.h; sourceTree = "<group>"; };
 		CE2952501FE8C15100B1BBF1 /* HitTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HitTestView.m; sourceTree = "<group>"; };
 		CE29DCBA1FB05D5000184896 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -186,6 +189,23 @@
 				A7DE4C5024D6DD7B006DBA60 /* PerformedObject.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CE0F074625921AF30042FC8C /* MethodCallResult */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F074725921B100042FC8C /* Controller */,
+			);
+			path = MethodCallResult;
+			sourceTree = "<group>";
+		};
+		CE0F074725921B100042FC8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F074825921B300042FC8C /* MethodCallResultViewController.h */,
+				CE0F074925921B300042FC8C /* MethodCallResultViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		CE29524D1FE8C13D00B1BBF1 /* ViewClass */ = {
@@ -371,6 +391,7 @@
 				CEA50CD11F78F0EA00453DBE /* AppDelegate.m */,
 				CEA50CD31F78F0EA00453DBE /* ViewController.h */,
 				CEA50CD41F78F0EA00453DBE /* ViewController.m */,
+				CE0F074625921AF30042FC8C /* MethodCallResult */,
 				CED9708724F4E6FA000CDFB5 /* Notification */,
 				A7DE4C4624D6DB27006DBA60 /* PerformSelector */,
 				CE29524D1FE8C13D00B1BBF1 /* ViewClass */,
@@ -601,6 +622,7 @@
 				CEA50CEA1F78F0F500453DBE /* BFormClass.m in Sources */,
 				CEF8F9811FC7FB0000BB52EE /* Son.m in Sources */,
 				CE757E8F1F8B49F4009354C0 /* NSString+Finder.m in Sources */,
+				CE0F074A25921B300042FC8C /* MethodCallResultViewController.m in Sources */,
 				CEA50CE91F78F0F500453DBE /* AFormClass.m in Sources */,
 				A7DE4C4A24D6DCBB006DBA60 /* PerformSelectorViewController.m in Sources */,
 				CE7E495C1FD8D7FB0047F099 /* GCDSingletonModel.m in Sources */,
