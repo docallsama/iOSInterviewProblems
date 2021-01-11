@@ -7,8 +7,11 @@
 //
 
 #import "MethodCallResultViewController.h"
+#import "Car.h"
 
 @interface MethodCallResultViewController ()
+
+@property (nonatomic, copy) NSString *golobalString;
 
 @end
 
@@ -18,22 +21,40 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self testStringCallMethods];
+    [self testObjectRelease];
 }
 
+//在方法内部修改外界传入的局部变量，只会作用于方法域之内
 - (void)testStringCallMethods
 {
     NSString *test = @"abc";
+    NSArray *testArray = @[@"1"];
+    self.golobalString = @"xyz";
     int num = 1;
-    NSLog(@"test -> %@ num -> %d", test, num);
-    [self changeString:test andNum:num];
-    NSLog(@"test -> %@ num -> %d", test, num);
+    NSLog(@"test -> %@ testArray -> %@ num -> %d" ,test ,testArray ,num);
+    // test -> abc testArray -> @"1" num -> 1
+    [self changeString:test andTestArray:testArray andNum:num];
+    NSLog(@"test -> %@ testArray -> %@ num -> %d" ,test ,testArray ,num);
+    // test -> abc testArray -> @"1" num -> 1
 }
 
-- (void)changeString:(NSString *)string andNum:(int)num
+- (void)changeString:(NSString *)string andTestArray:(NSArray *)testArray andNum:(int)num
 {
     string = @"def";
     num = 2;
-    NSLog(@"test -> %@ num -> %d", string, num);
+    testArray = @[@"2",@"3"];
+    NSLog(@"test -> %@ testArray -> %@ num -> %d",string ,testArray ,num);
+    // test -> def testArray -> @"2",@"3" num -> 2
+}
+
+- (void)testObjectRelease
+{
+    [self createAObject];
+}
+
+- (void)createAObject
+{
+    Car *benz = [[Car alloc] init];
 }
 
 /*

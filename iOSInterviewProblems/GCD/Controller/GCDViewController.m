@@ -31,7 +31,8 @@
 //    [self testSemephore];
 //    [self testAsyncToSync];
 //    [self testMultiTask];
-    [self testSyncSerialCallInAsyncSerial];
+//    [self testSyncSerialCallInAsyncSerial];
+    [self testGCDSyncAndAsync];
 }
 
 //各种处理队列
@@ -277,6 +278,29 @@
 //同步串行在异步串行队列中调用
 - (void)testSyncSerialCallInAsyncSerial {
     
+}
+
+//测试 gcd 的 block 进行相互包裹
+- (void)testGCDSyncAndAsync
+{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    NSLog(@"log1");
+    dispatch_async(queue, ^{
+        NSLog(@"log2");
+        dispatch_sync(queue, ^{
+            NSLog(@"log3");
+        });
+        NSLog(@"log4");
+    });
+    NSLog(@"log5");
+    
+/*
+    log1
+    log5
+    log2
+    log3
+    log4
+*/
 }
 
 - (void)didReceiveMemoryWarning {
