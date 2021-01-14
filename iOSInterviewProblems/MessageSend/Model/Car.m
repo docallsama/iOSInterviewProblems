@@ -27,4 +27,16 @@
     return @"bar";
 }
 
++ (Car *)getBenz
+{
+    Car *benz = [[Car alloc] init];
+    return benz;
+}
+
++ (Car *)newBenz
+{
+    Car *benz = [[Car alloc] init];
+    return benz;
+}
+
 @end

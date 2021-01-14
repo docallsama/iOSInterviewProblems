@@ -20,4 +20,8 @@
 
 - (id)objectForKeyedSubscript:(NSString *)key;
 
++ (Car *)getBenz;
+
++ (Car *)newBenz;
+
 @end
