@@ -27,11 +27,12 @@
     //与timer相关
 //    [self testScheduledTimer];
 //    [self testTimer];
-    [self testRunlLoopTimer];
+//    [self testRunlLoopTimer];
 //    [self testTimerWithFireDate];
     
     //自定义runloop
 //    [self testCustomRunloop];
+    [self testContinueRunloop];
 }
 
 #pragma mark - timer相关
@@ -104,14 +105,11 @@
 
 #pragma mark - 自定义runloop
 
+//子线程中启动定时器使用runloop保活
 - (void)testCustomRunloop {
     self.socketThread = [[NSThread alloc] initWithTarget:self selector:@selector(socketMethod) object:nil];
     self.socketThread.name = @"com.uzai.socketThread";
     [self.socketThread start];
-    
-    self.socketThread = [[NSThread alloc] initWithBlock:^{
-        
-    }];
 }
 
 - (void)socketMethod {
@@ -120,6 +118,48 @@
         [[NSRunLoop currentRunLoop] addTimer:self.runloopTimer forMode:NSDefaultRunLoopMode];
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }
+}
+
+#pragma mark - 线程保活
+
+- (void)testContinueRunloop
+{
+    self.continueThread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+    self.continueThread.name = @"com.soyoung.continueThread";
+    [self.continueThread start];
+}
+
+- (void)run
+{
+    @autoreleasepool {
+        /*如果不加这句，会发现runloop创建出来就挂了，因为runloop如果没有CFRunLoopSourceRef事件源输入或者定时器，就会立马消亡。
+              下面的方法给runloop添加一个NSport，就是添加一个事件源，也可以添加一个定时器，或者observer，让runloop不会挂掉*/
+        [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSRunLoopCommonModes];
+        [[NSRunLoop currentRunLoop] run];
+    }
+}
+
+- (void)testContinueRunloopMethod:(NSString *)testString
+{
+    NSLog(@"begin current thread -> %@ testString -> %@",[NSThread currentThread], testString);
+    sleep(3);
+    NSLog(@"end current thread -> %@ testString -> %@",[NSThread currentThread], testString);
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self performSelector:@selector(testContinueRunloopMethod:) onThread:self.continueThread withObject:@"test string" waitUntilDone:NO];
+}
+
+- (void)stopRunloop
+{
+    NSLog(@"current thread -> %@", [NSThread currentThread]);
+    [NSThread exit];
+//    [[NSRunLoop currentRunLoop] removePort:[NSPort port] forMode:NSRunLoopCommonModes];
+}
+
+- (IBAction)onClickStopLoopButton:(UIButton *)sender {
+    [self performSelector:@selector(stopRunloop) onThread:self.continueThread withObject:nil waitUntilDone:NO];
 }
 
 - (void)doFireTimer:(NSTimer *)timer {
