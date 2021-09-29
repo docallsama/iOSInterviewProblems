@@ -29,6 +29,7 @@
 		CE7E49591FD682870047F099 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E49581FD682870047F099 /* GCDViewController.m */; };
 		CE7E495C1FD8D7FB0047F099 /* GCDSingletonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E495B1FD8D7FB0047F099 /* GCDSingletonModel.m */; };
 		CE817584252472B800A68C63 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CE817583252472B800A68C63 /* Student.m */; };
+		CE97973125C8EB40000E689D /* DemoThread.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97973025C8EB40000E689D /* DemoThread.m */; };
 		CE9E12FC1FB59233009D6E6C /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12F81FB59233009D6E6C /* Car.m */; };
 		CE9E12FD1FB59233009D6E6C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FA1FB59233009D6E6C /* Person.m */; };
 		CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9E12FF1FB59250009D6E6C /* MessageSendViewController.m */; };
@@ -100,6 +101,8 @@
 		CE7E495B1FD8D7FB0047F099 /* GCDSingletonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSingletonModel.m; sourceTree = "<group>"; };
 		CE817582252472B800A68C63 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		CE817583252472B800A68C63 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		CE97972F25C8EB40000E689D /* DemoThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoThread.h; sourceTree = "<group>"; };
+		CE97973025C8EB40000E689D /* DemoThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoThread.m; sourceTree = "<group>"; };
 		CE9E12F71FB59233009D6E6C /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		CE9E12F81FB59233009D6E6C /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		CE9E12F91FB59233009D6E6C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -333,6 +336,8 @@
 				CEC86BD11FDA7A4C00032694 /* Semaphore.m */,
 				CED419131FEA3D2A002E791C /* TestGCDAsyncModel.h */,
 				CED419141FEA3D2A002E791C /* TestGCDAsyncModel.m */,
+				CE97972F25C8EB40000E689D /* DemoThread.h */,
+				CE97973025C8EB40000E689D /* DemoThread.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 			files = (
 				CEA50CD51F78F0EA00453DBE /* ViewController.m in Sources */,
 				CE7E49591FD682870047F099 /* GCDViewController.m in Sources */,
+				CE97973125C8EB40000E689D /* DemoThread.m in Sources */,
 				CE7E49541FCFB5EA0047F099 /* NSObject+Conversion.m in Sources */,
 				CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */,
 				CEA2DC001FE2087B00592FDA /* RunloopViewController.m in Sources */,

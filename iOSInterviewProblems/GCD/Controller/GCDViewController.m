@@ -11,6 +11,7 @@
 #import "GCDMultiThreadModel.h"
 #import "Semaphore.h"
 #import "TestGCDAsyncModel.h"
+#import "DemoThread.h"
 
 @interface GCDViewController ()
 
@@ -32,7 +33,8 @@
 //    [self testAsyncToSync];
 //    [self testMultiTask];
 //    [self testSyncSerialCallInAsyncSerial];
-    [self testGCDSyncAndAsync];
+//    [self testGCDSyncAndAsync];
+    [self testAliDemoThread];
 }
 
 //各种处理队列
@@ -220,6 +222,13 @@
         
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+}
+
+#pragma mark - AliDemoThread
+
+- (void)testAliDemoThread
+{
+    [DemoThread run4TaskNSThreadLock];
 }
 
 #pragma mark - GCDTimer
