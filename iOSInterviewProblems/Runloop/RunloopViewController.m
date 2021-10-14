@@ -7,10 +7,12 @@
 //
 
 #import "RunloopViewController.h"
+#import "Car.h"
 
 @interface RunloopViewController () {
     
     __weak IBOutlet UIScrollView *ibMainScrollView;
+    __weak IBOutlet UIImageView *ibContentImageView;
     
 }
 
@@ -132,9 +134,39 @@
 - (void)run
 {
     @autoreleasepool {
+        CFRunLoopRef myCFRunLoop = CFRunLoopGetCurrent();
+        CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(NULL, kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+                switch (activity) {
+                    case kCFRunLoopEntry:
+                        NSLog(@"observer: loop entry");
+                        break;
+                    case kCFRunLoopBeforeTimers:
+                        NSLog(@"observer: before timers");
+                        break;
+                    case kCFRunLoopBeforeSources:
+                        NSLog(@"observer: before sources");
+                        break;
+                    case kCFRunLoopBeforeWaiting:
+                        NSLog(@"observer: before waiting");
+                        break;
+                    case kCFRunLoopAfterWaiting:
+                        NSLog(@"observer: after waiting");
+                        break;
+                    case kCFRunLoopExit:
+                        NSLog(@"observer: exit");
+                        break;
+                    case kCFRunLoopAllActivities:
+                        NSLog(@"observer: all activities");
+                        break;
+                    default:
+                        break;
+                }
+            });
+        CFRunLoopAddObserver(myCFRunLoop, observer, kCFRunLoopDefaultMode);
+        
         /*如果不加这句，会发现runloop创建出来就挂了，因为runloop如果没有CFRunLoopSourceRef事件源输入或者定时器，就会立马消亡。
               下面的方法给runloop添加一个NSport，就是添加一个事件源，也可以添加一个定时器，或者observer，让runloop不会挂掉*/
-        [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSRunLoopCommonModes];
+        [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
         [[NSRunLoop currentRunLoop] run];
     }
 }
@@ -142,6 +174,20 @@
 - (void)testContinueRunloopMethod:(NSString *)testString
 {
     NSLog(@"begin current thread -> %@ testString -> %@",[NSThread currentThread], testString);
+    
+    /* 此处若不添加 autoreleasepool 则对象不会在循环结束时释放，等到 testContinueRunloopMethod 方法执行完之后的 kCFRunLoopExit 再进行释放*/
+    
+    for (int i = 0; i < 999; i++) {
+        @autoreleasepool {
+            Car *benz = [[Car alloc] init];
+            benz.model = @"suv";
+            NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"testRunloop" ofType:@"png"];
+            UIImage *displayImage = [[UIImage alloc] initWithContentsOfFile:imagePath];
+//            benz.displayImage = displayImage;
+            [benz run];
+        }
+    }
+    
     sleep(3);
     NSLog(@"end current thread -> %@ testString -> %@",[NSThread currentThread], testString);
 }

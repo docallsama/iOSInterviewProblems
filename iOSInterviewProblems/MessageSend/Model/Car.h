@@ -12,6 +12,8 @@
 
 @property (nonatomic,copy)NSString *model;
 
+@property (nonatomic,strong)UIImage *displayImage;  //!<展示图片
+
 - (void)run;
 
 + (void)instanceRun;

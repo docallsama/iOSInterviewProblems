@@ -228,7 +228,7 @@
 
 - (void)testAliDemoThread
 {
-    [DemoThread run4TaskNSThreadLock];
+    [DemoThread run4TaskOperation];
 }
 
 #pragma mark - GCDTimer
