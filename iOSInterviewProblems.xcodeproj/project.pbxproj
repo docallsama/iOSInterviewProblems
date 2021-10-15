@@ -50,6 +50,8 @@
 		CED419151FEA3D2A002E791C /* TestGCDAsyncModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CED419141FEA3D2A002E791C /* TestGCDAsyncModel.m */; };
 		CED9708B24F4E81A000CDFB5 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED9708A24F4E81A000CDFB5 /* NotificationViewController.m */; };
 		CED9708F24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */; };
+		CEF5313427181AFF0056878F /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF5313327181AFF0056878F /* AnimationViewController.m */; };
+		CEF53137271826810056878F /* AnimationSubClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF53136271826810056878F /* AnimationSubClassView.m */; };
 		CEF8F97B1FC7FAA300BB52EE /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F97A1FC7FAA300BB52EE /* RuntimeViewController.m */; };
 		CEF8F97E1FC7FAF700BB52EE /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F97D1FC7FAF700BB52EE /* Father.m */; };
 		CEF8F9811FC7FB0000BB52EE /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F9801FC7FB0000BB52EE /* Son.m */; };
@@ -141,6 +143,10 @@
 		CED9708A24F4E81A000CDFB5 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		CED9708D24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomIntensityVisualEffectView.h; sourceTree = "<group>"; };
 		CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomIntensityVisualEffectView.m; sourceTree = "<group>"; };
+		CEF5313227181AFF0056878F /* AnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
+		CEF5313327181AFF0056878F /* AnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
+		CEF53135271826810056878F /* AnimationSubClassView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationSubClassView.h; sourceTree = "<group>"; };
+		CEF53136271826810056878F /* AnimationSubClassView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationSubClassView.m; sourceTree = "<group>"; };
 		CEF8F9791FC7FAA300BB52EE /* RuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
 		CEF8F97A1FC7FAA300BB52EE /* RuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
 		CEF8F97C1FC7FAF700BB52EE /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
@@ -414,6 +420,7 @@
 				CEB2E86A1FB00D5700D32806 /* Blocks */,
 				CEF8F9761FC7F9A000BB52EE /* Runtime */,
 				CEF55CEB1FE1274300541D78 /* Runloop */,
+				CEF5313127181A670056878F /* Animation */,
 				CEA50CD61F78F0EA00453DBE /* Main.storyboard */,
 				CEA50CD91F78F0EA00453DBE /* Assets.xcassets */,
 				CEA50CDB1F78F0EA00453DBE /* LaunchScreen.storyboard */,
@@ -488,6 +495,17 @@
 				CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CEF5313127181A670056878F /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				CEF5313227181AFF0056878F /* AnimationViewController.h */,
+				CEF5313327181AFF0056878F /* AnimationViewController.m */,
+				CEF53135271826810056878F /* AnimationSubClassView.h */,
+				CEF53136271826810056878F /* AnimationSubClassView.m */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		CEF55CEB1FE1274300541D78 /* Runloop */ = {
@@ -608,10 +626,12 @@
 				CE97973125C8EB40000E689D /* DemoThread.m in Sources */,
 				CE7E49541FCFB5EA0047F099 /* NSObject+Conversion.m in Sources */,
 				CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */,
+				CEF53137271826810056878F /* AnimationSubClassView.m in Sources */,
 				CEA2DC001FE2087B00592FDA /* RunloopViewController.m in Sources */,
 				CED9708B24F4E81A000CDFB5 /* NotificationViewController.m in Sources */,
 				CE9E12FD1FB59233009D6E6C /* Person.m in Sources */,
 				CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */,
+				CEF5313427181AFF0056878F /* AnimationViewController.m in Sources */,
 				CE29DCC51FB1669500184896 /* EXTScope.m in Sources */,
 				A7DE4C5124D6DD7B006DBA60 /* PerformedObject.m in Sources */,
 				CE2952511FE8C15200B1BBF1 /* HitTestView.m in Sources */,
