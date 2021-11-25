@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RunloopThread.h"
 
 @interface RunloopViewController : UIViewController
 
 @property (nonatomic, strong) NSTimer *runloopTimer;
 @property (nonatomic, strong) NSThread *socketThread;
-@property (nonatomic, strong) NSThread *continueThread; //!<保活线程
+@property (nonatomic, strong) RunloopThread *continueThread; //!<保活线程
 
 @end
