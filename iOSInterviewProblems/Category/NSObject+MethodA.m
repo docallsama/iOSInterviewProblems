@@ -21,7 +21,7 @@
 }
 
 - (void)setName:(NSString *)name {
-    objc_setAssociatedObject(self, @selector(name), name, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(name), name, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
 }
 

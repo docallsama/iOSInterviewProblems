@@ -47,6 +47,8 @@
 		CEB2E86D1FB00DB300D32806 /* BlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB2E86C1FB00DB300D32806 /* BlocksViewController.m */; };
 		CEC86BCC1FD94A7D00032694 /* GCDMultiThreadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC86BCB1FD94A7D00032694 /* GCDMultiThreadModel.m */; };
 		CEC86BD21FDA7A4C00032694 /* Semaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC86BD11FDA7A4C00032694 /* Semaphore.m */; };
+		CECCF51027463805001A3389 /* CopyCustomClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECCF50F27463805001A3389 /* CopyCustomClassViewController.m */; };
+		CECCF51427463855001A3389 /* ParentPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CECCF51327463855001A3389 /* ParentPerson.m */; };
 		CED419151FEA3D2A002E791C /* TestGCDAsyncModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CED419141FEA3D2A002E791C /* TestGCDAsyncModel.m */; };
 		CED9708B24F4E81A000CDFB5 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED9708A24F4E81A000CDFB5 /* NotificationViewController.m */; };
 		CED9708F24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */; };
@@ -137,6 +139,10 @@
 		CEC86BCB1FD94A7D00032694 /* GCDMultiThreadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDMultiThreadModel.m; sourceTree = "<group>"; };
 		CEC86BD01FDA7A4C00032694 /* Semaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Semaphore.h; sourceTree = "<group>"; };
 		CEC86BD11FDA7A4C00032694 /* Semaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Semaphore.m; sourceTree = "<group>"; };
+		CECCF50E27463805001A3389 /* CopyCustomClassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyCustomClassViewController.h; sourceTree = "<group>"; };
+		CECCF50F27463805001A3389 /* CopyCustomClassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyCustomClassViewController.m; sourceTree = "<group>"; };
+		CECCF51227463855001A3389 /* ParentPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentPerson.h; sourceTree = "<group>"; };
+		CECCF51327463855001A3389 /* ParentPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentPerson.m; sourceTree = "<group>"; };
 		CED419131FEA3D2A002E791C /* TestGCDAsyncModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestGCDAsyncModel.h; sourceTree = "<group>"; };
 		CED419141FEA3D2A002E791C /* TestGCDAsyncModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestGCDAsyncModel.m; sourceTree = "<group>"; };
 		CED9708924F4E81A000CDFB5 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
@@ -404,6 +410,7 @@
 				CEA50CD11F78F0EA00453DBE /* AppDelegate.m */,
 				CEA50CD31F78F0EA00453DBE /* ViewController.h */,
 				CEA50CD41F78F0EA00453DBE /* ViewController.m */,
+				CECCF50C27463775001A3389 /* CopyCustomClass */,
 				CE0F074625921AF30042FC8C /* MethodCallResult */,
 				CED9708724F4E6FA000CDFB5 /* Notification */,
 				A7DE4C4624D6DB27006DBA60 /* PerformSelector */,
@@ -468,6 +475,33 @@
 				A781E9AD252EBD5F001D0A54 /* TestObject.m */,
 			);
 			path = Blocks;
+			sourceTree = "<group>";
+		};
+		CECCF50C27463775001A3389 /* CopyCustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				CECCF51127463818001A3389 /* Class */,
+				CECCF50D274637D6001A3389 /* Controller */,
+			);
+			path = CopyCustomClass;
+			sourceTree = "<group>";
+		};
+		CECCF50D274637D6001A3389 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CECCF50E27463805001A3389 /* CopyCustomClassViewController.h */,
+				CECCF50F27463805001A3389 /* CopyCustomClassViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CECCF51127463818001A3389 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				CECCF51227463855001A3389 /* ParentPerson.h */,
+				CECCF51327463855001A3389 /* ParentPerson.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		CED9708724F4E6FA000CDFB5 /* Notification */ = {
@@ -626,8 +660,10 @@
 				CE97973125C8EB40000E689D /* DemoThread.m in Sources */,
 				CE7E49541FCFB5EA0047F099 /* NSObject+Conversion.m in Sources */,
 				CE65FC521F989313008FF2B6 /* NSObject+OVKVO.m in Sources */,
+				CECCF51027463805001A3389 /* CopyCustomClassViewController.m in Sources */,
 				CEF53137271826810056878F /* AnimationSubClassView.m in Sources */,
 				CEA2DC001FE2087B00592FDA /* RunloopViewController.m in Sources */,
+				CECCF51427463855001A3389 /* ParentPerson.m in Sources */,
 				CED9708B24F4E81A000CDFB5 /* NotificationViewController.m in Sources */,
 				CE9E12FD1FB59233009D6E6C /* Person.m in Sources */,
 				CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */,
@@ -643,8 +679,8 @@
 				A781E9AE252EBD5F001D0A54 /* TestObject.m in Sources */,
 				CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */,
 				CED9708F24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m in Sources */,
-				CE757E891F8B218A009354C0 /* NSObject+MethodA.m in Sources */,
 				CE757E8C1F8B2196009354C0 /* NSObject+MethodB.m in Sources */,
+				CE757E891F8B218A009354C0 /* NSObject+MethodA.m in Sources */,
 				CE29DCC81FB19E9B00184896 /* EXTRuntimeExtensions.m in Sources */,
 				CEF8F97B1FC7FAA300BB52EE /* RuntimeViewController.m in Sources */,
 				CED419151FEA3D2A002E791C /* TestGCDAsyncModel.m in Sources */,
