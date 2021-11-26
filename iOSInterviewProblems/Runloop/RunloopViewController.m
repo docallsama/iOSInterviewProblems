@@ -127,7 +127,16 @@
 - (void)testContinueRunloop
 {
     shouldKeepRunning = YES;
-    self.continueThread = [[RunloopThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+    /* 不能使用selector 方式，*/
+//    self.continueThread = [[RunloopThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+    __weak typeof(self) __weakSelf = self;
+    self.continueThread = [[RunloopThread alloc] initWithBlock:^{
+        [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
+        /*不能使用 [[NSRunLoop currentRunLoop] run] 启动 runloop，会导致runloop无法退出*/
+        while (__weakSelf && shouldKeepRunning) {
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        }
+    }];
     self.continueThread.name = @"com.soyoung.continueThread";
     [self.continueThread start];
 }
@@ -204,8 +213,8 @@
 - (void)stopRunloop
 {
     shouldKeepRunning = NO;
+    CFRunLoopStop(CFRunLoopGetCurrent());
     NSLog(@"exit current thread -> %@", [NSThread currentThread]);
-    self.continueThread = nil;
 }
 
 - (IBAction)onClickStopLoopButton:(UIButton *)sender {
