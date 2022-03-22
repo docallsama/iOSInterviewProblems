@@ -53,6 +53,7 @@
 		CED419151FEA3D2A002E791C /* TestGCDAsyncModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CED419141FEA3D2A002E791C /* TestGCDAsyncModel.m */; };
 		CED9708B24F4E81A000CDFB5 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED9708A24F4E81A000CDFB5 /* NotificationViewController.m */; };
 		CED9708F24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */; };
+		CEF28ED627E974BD00EA9486 /* TestLocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF28ED527E974BD00EA9486 /* TestLocksViewController.m */; };
 		CEF5313427181AFF0056878F /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF5313327181AFF0056878F /* AnimationViewController.m */; };
 		CEF53137271826810056878F /* AnimationSubClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF53136271826810056878F /* AnimationSubClassView.m */; };
 		CEF8F97B1FC7FAA300BB52EE /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF8F97A1FC7FAA300BB52EE /* RuntimeViewController.m */; };
@@ -152,6 +153,8 @@
 		CED9708A24F4E81A000CDFB5 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		CED9708D24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomIntensityVisualEffectView.h; sourceTree = "<group>"; };
 		CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomIntensityVisualEffectView.m; sourceTree = "<group>"; };
+		CEF28ED427E974BD00EA9486 /* TestLocksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLocksViewController.h; sourceTree = "<group>"; };
+		CEF28ED527E974BD00EA9486 /* TestLocksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLocksViewController.m; sourceTree = "<group>"; };
 		CEF5313227181AFF0056878F /* AnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
 		CEF5313327181AFF0056878F /* AnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
 		CEF53135271826810056878F /* AnimationSubClassView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationSubClassView.h; sourceTree = "<group>"; };
@@ -430,6 +433,7 @@
 				CEB2E86A1FB00D5700D32806 /* Blocks */,
 				CEF8F9761FC7F9A000BB52EE /* Runtime */,
 				CEF55CEB1FE1274300541D78 /* Runloop */,
+				CEF28ED327E974A900EA9486 /* Locks */,
 				CEF5313127181A670056878F /* Animation */,
 				CEA50CD61F78F0EA00453DBE /* Main.storyboard */,
 				CEA50CD91F78F0EA00453DBE /* Assets.xcassets */,
@@ -532,6 +536,15 @@
 				CED9708E24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CEF28ED327E974A900EA9486 /* Locks */ = {
+			isa = PBXGroup;
+			children = (
+				CEF28ED427E974BD00EA9486 /* TestLocksViewController.h */,
+				CEF28ED527E974BD00EA9486 /* TestLocksViewController.m */,
+			);
+			path = Locks;
 			sourceTree = "<group>";
 		};
 		CEF5313127181A670056878F /* Animation */ = {
@@ -686,6 +699,7 @@
 				CED9708F24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m in Sources */,
 				CE757E8C1F8B2196009354C0 /* NSObject+MethodB.m in Sources */,
 				CE757E891F8B218A009354C0 /* NSObject+MethodA.m in Sources */,
+				CEF28ED627E974BD00EA9486 /* TestLocksViewController.m in Sources */,
 				CE29DCC81FB19E9B00184896 /* EXTRuntimeExtensions.m in Sources */,
 				CEF8F97B1FC7FAA300BB52EE /* RuntimeViewController.m in Sources */,
 				CED419151FEA3D2A002E791C /* TestGCDAsyncModel.m in Sources */,
