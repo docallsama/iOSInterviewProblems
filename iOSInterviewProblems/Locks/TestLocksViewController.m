@@ -13,6 +13,7 @@
 @interface TestLocksViewController ()
 
 @property (nonatomic, assign) pthread_rwlock_t lock;
+@property (nonatomic, strong) dispatch_queue_t queue;
 
 @end
 
@@ -21,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self testUsePthreadRWLock];
+//    [self testUsePthreadRWLock];
+    [self testUseBarrier];
 }
 
 #pragma mark - pthread_rwlock_t
@@ -36,7 +38,9 @@
         dispatch_async(queue, ^{
             [self testRead];
         });
-        
+        dispatch_async(queue, ^{
+            [self testRead];
+        });
         dispatch_async(queue, ^{
             [self testWrite];
         });
@@ -60,6 +64,35 @@
 }
 
 #pragma mark - dispatch_barrier_async
+
+- (void)testUseBarrier
+{
+    //注意：使用barrier 必须使用自己创建的异步队列。如果使用串行或者全局异步队列，则效果等同于dispath_async
+    self.queue = dispatch_queue_create("test1", DISPATCH_QUEUE_CONCURRENT);
+    
+    for (int i = 0; i < 10; i++) {
+        [self testBarrierRead];
+        [self testBarrierRead];
+        [self testBarrierWrite];
+    }
+}
+
+- (void)testBarrierRead
+{
+    dispatch_async(self.queue, ^{
+        sleep(1);
+        NSLog(@"read");
+    });
+}
+
+- (void)testBarrierWrite
+{
+    dispatch_barrier_async(self.queue, ^{
+        sleep(1);
+        NSLog(@"write");
+    });
+}
+
 
 - (void)dealloc
 {
