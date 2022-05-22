@@ -34,7 +34,8 @@
 //    [self testMultiTask];
 //    [self testSyncSerialCallInAsyncSerial];
 //    [self testGCDSyncAndAsync];
-    [self testAliDemoThread];
+//    [self testAliDemoThread];
+    [self testBoss];
 }
 
 //各种处理队列
@@ -229,6 +230,27 @@
 - (void)testAliDemoThread
 {
     [DemoThread run4TaskOperation];
+}
+
+#pragma mark - boss
+
+- (void)testBoss
+{
+    NSLog(@"begin term");
+    dispatch_queue_t quque = dispatch_queue_create("test", NULL);
+    dispatch_async(quque, ^{
+        NSLog(@"1");
+        sleep(1);
+    });
+    dispatch_async(quque, ^{
+        NSLog(@"2");
+        sleep(1);
+    });
+    dispatch_async(quque, ^{
+        NSLog(@"3");
+        sleep(1);
+    });
+    NSLog(@"end term");
 }
 
 #pragma mark - GCDTimer

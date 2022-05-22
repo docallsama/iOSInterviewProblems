@@ -11,6 +11,8 @@
 #import "Father.h"
 #import "Car.h"
 #import "Student.h"
+#import "BossClassA.h"
+#import "TestBossMRC.h"
 
 @interface RuntimeViewController ()
 
@@ -23,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self getInstanceVariable];
+//    [self getInstanceVariable];
 //    [self getSuperClassInstanceVariable];
 //    [self getClassAllIvar];
 //    [self getClassProperty];
@@ -36,6 +38,7 @@
 //    [self replaceMethodOfPersonWithExistMethod];
     
 //    [self personWithUnkownMethod];
+    [self testBoss];
 }
 
 #pragma mark - 属性相关操作
@@ -235,6 +238,31 @@
     self.deBenz = [[Car alloc] init];
 //    [car performSelector:@selector(run) withObject:nil];
     [self.deBenz run];
+}
+
+#pragma mark - boss
+
+- (void)testBoss
+{
+//    [NSObject test1];   // bbbb
+//    [BossClassA test1];  // bbbb
+//    [[[NSObject alloc] init] test]; //crash
+//    [[[BossClassA alloc] init] test]; //crash
+    
+//    [TestBossMRC test];
+    BossClassA *classA = [[BossClassA alloc] init];
+//    [classA testUserDetault];
+//    [classA syncMain];
+//    NSString *string = [classA getString];
+    
+    //手动触发KVO 
+    [classA willChangeValueForKey:@"age"];
+    [classA didChangeValueForKey:@"age"];
+    
+    id cls = [BossClassA class];
+    void *obj = &cls;
+    [(__bridge  id)obj print];
+    //iOSInterviewProblems[14931:17910655] self.name = <BossClassA: 0x6000034a4f00>
 }
 
 - (void)didReceiveMemoryWarning {

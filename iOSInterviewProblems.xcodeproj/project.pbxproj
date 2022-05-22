@@ -10,6 +10,8 @@
 		A781E9AE252EBD5F001D0A54 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A781E9AD252EBD5F001D0A54 /* TestObject.m */; };
 		A7DE4C4A24D6DCBB006DBA60 /* PerformSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DE4C4924D6DCBB006DBA60 /* PerformSelectorViewController.m */; };
 		A7DE4C5124D6DD7B006DBA60 /* PerformedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DE4C5024D6DD7B006DBA60 /* PerformedObject.m */; };
+		A7F7B1B12839214C008B0ADB /* BossClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7B1B02839214C008B0ADB /* BossClassA.m */; };
+		A7F7B1B42839277F008B0ADB /* TestBossMRC.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7B1B32839277F008B0ADB /* TestBossMRC.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CE0F074A25921B300042FC8C /* MethodCallResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0F074925921B300042FC8C /* MethodCallResultViewController.m */; };
 		CE278AFA27059D3B004298F2 /* testRunloop.png in Resources */ = {isa = PBXBuildFile; fileRef = CE278AF927059D3B004298F2 /* testRunloop.png */; };
 		CE2952511FE8C15200B1BBF1 /* HitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2952501FE8C15100B1BBF1 /* HitTestView.m */; };
@@ -68,6 +70,10 @@
 		A7DE4C4924D6DCBB006DBA60 /* PerformSelectorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerformSelectorViewController.m; sourceTree = "<group>"; };
 		A7DE4C4F24D6DD7B006DBA60 /* PerformedObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerformedObject.h; sourceTree = "<group>"; };
 		A7DE4C5024D6DD7B006DBA60 /* PerformedObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerformedObject.m; sourceTree = "<group>"; };
+		A7F7B1AF2839214C008B0ADB /* BossClassA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BossClassA.h; sourceTree = "<group>"; };
+		A7F7B1B02839214C008B0ADB /* BossClassA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BossClassA.m; sourceTree = "<group>"; };
+		A7F7B1B22839277F008B0ADB /* TestBossMRC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBossMRC.h; sourceTree = "<group>"; };
+		A7F7B1B32839277F008B0ADB /* TestBossMRC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBossMRC.m; sourceTree = "<group>"; };
 		CE0F074825921B300042FC8C /* MethodCallResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodCallResultViewController.h; sourceTree = "<group>"; };
 		CE0F074925921B300042FC8C /* MethodCallResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodCallResultViewController.m; sourceTree = "<group>"; };
 		CE278AF927059D3B004298F2 /* testRunloop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testRunloop.png; sourceTree = "<group>"; };
@@ -586,6 +592,10 @@
 				CEF8F97D1FC7FAF700BB52EE /* Father.m */,
 				CEF8F97F1FC7FB0000BB52EE /* Son.h */,
 				CEF8F9801FC7FB0000BB52EE /* Son.m */,
+				A7F7B1AF2839214C008B0ADB /* BossClassA.h */,
+				A7F7B1B02839214C008B0ADB /* BossClassA.m */,
+				A7F7B1B22839277F008B0ADB /* TestBossMRC.h */,
+				A7F7B1B32839277F008B0ADB /* TestBossMRC.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -694,9 +704,11 @@
 				CEB2E86D1FB00DB300D32806 /* BlocksViewController.m in Sources */,
 				CE757E921F8B7D2F009354C0 /* NSDictionary+DeepCopy.m in Sources */,
 				CE757E9D1F8F637E009354C0 /* Person+MethodRun.m in Sources */,
+				A7F7B1B12839214C008B0ADB /* BossClassA.m in Sources */,
 				A781E9AE252EBD5F001D0A54 /* TestObject.m in Sources */,
 				CE9E13001FB59250009D6E6C /* MessageSendViewController.m in Sources */,
 				CED9708F24F75B5D000CDFB5 /* CustomIntensityVisualEffectView.m in Sources */,
+				A7F7B1B42839277F008B0ADB /* TestBossMRC.m in Sources */,
 				CE757E8C1F8B2196009354C0 /* NSObject+MethodB.m in Sources */,
 				CE757E891F8B218A009354C0 /* NSObject+MethodA.m in Sources */,
 				CEF28ED627E974BD00EA9486 /* TestLocksViewController.m in Sources */,
