@@ -28,6 +28,11 @@
 
 @implementation BossClassA
 
+- (void)dealloc
+{
+    NSLog(@"BossClassA dealloc");
+}
+
 - (void)testUserDetault
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];

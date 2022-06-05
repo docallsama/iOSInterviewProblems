@@ -34,8 +34,8 @@
 //    [self testMultiTask];
 //    [self testSyncSerialCallInAsyncSerial];
 //    [self testGCDSyncAndAsync];
-//    [self testAliDemoThread];
-    [self testBoss];
+    [self testAliDemoThread];
+//    [self testBoss];
 }
 
 //各种处理队列
@@ -229,7 +229,7 @@
 
 - (void)testAliDemoThread
 {
-    [DemoThread run4TaskOperation];
+    [DemoThread run4TaskSemaphore];
 }
 
 #pragma mark - boss

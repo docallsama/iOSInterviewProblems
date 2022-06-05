@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)run4TaskGCD;
 
++ (void)run4TaskSemaphore;
+
 + (BOOL)testDicEqual:(NSDictionary *)lDic with:(NSDictionary *)rDic;
 
 @end

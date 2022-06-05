@@ -8,12 +8,14 @@
 
 #import "RunloopViewController.h"
 #import "Car.h"
+#import <execinfo.h>
 
 @interface RunloopViewController () {
     
     __weak IBOutlet UIScrollView *ibMainScrollView;
     __weak IBOutlet UIImageView *ibContentImageView;
     BOOL shouldKeepRunning;
+    NSMutableArray *_backtrace;
 }
 
 @end
@@ -34,7 +36,9 @@
     
     //自定义runloop
 //    [self testCustomRunloop];
-    [self testContinueRunloop];
+//    [self testContinueRunloop];
+//    [self testForLoop];
+    [self logStack];
 }
 
 #pragma mark - timer相关
@@ -219,10 +223,45 @@
 
 - (IBAction)onClickStopLoopButton:(UIButton *)sender {
     [self performSelector:@selector(stopRunloop) onThread:self.continueThread withObject:nil waitUntilDone:NO];
+//    [self testForLoop];
 }
 
 - (void)doFireTimer:(NSTimer *)timer {
     NSLog(@"doFireTimer -> %@",timer);
+}
+
+- (void)testForLoop
+{
+    for (int i = 0; i < 5; i++) {
+        NSLog(@"temp size");
+    }
+}
+
+//打印调用堆栈
+- (void)logStack{
+    void* callstack[128];
+    int frames = backtrace(callstack, 128);
+    char **strs = backtrace_symbols(callstack, frames);
+    int i;
+    if (_backtrace) {
+        [_backtrace removeAllObjects];
+    }
+    _backtrace = [NSMutableArray arrayWithCapacity:frames];
+    for ( i = 0 ; i < frames ; i++ ){
+        [_backtrace addObject:[NSString stringWithUTF8String:strs[i]]];
+    }
+    free(strs);
+    
+    NSMutableDictionary * reportDic = [[NSMutableDictionary alloc] init];
+    if (_backtrace) {
+        [reportDic setValue:_backtrace forKey:@"caton"];
+        [reportDic setValue:@"caton" forKey:@"action"];
+    }
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        //记录fps相关信息
+//        [QAPMonitor addFPSMonitor:reportDic];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -231,6 +270,9 @@
 }
 
 - (void)dealloc {
+//    __weak id innerPeace = self;
+    //放开上面注释会造成崩溃，weakTable会判断是否正在deallocing，如果是则触发崩溃
+    // Cannot form weak reference to instance (0x7fb19e91c2f0) of class RunloopViewController. It is possible that this object was over-released, or is in the process of deallocation.
     NSLog(@"dealloc");
 }
 

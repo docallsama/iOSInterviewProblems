@@ -162,5 +162,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+//再次调用viewDidLoad
+- (void)calledViewDidloadTwice
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.view removeFromSuperview];
+        self.view = nil;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.view.backgroundColor = [UIColor yellowColor];
+        });
+    });
+}
+
 
 @end

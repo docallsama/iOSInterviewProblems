@@ -38,7 +38,8 @@
 //    [self replaceMethodOfPersonWithExistMethod];
     
 //    [self personWithUnkownMethod];
-    [self testBoss];
+//    [self testBoss];
+    [self testWeak];
 }
 
 #pragma mark - 属性相关操作
@@ -255,7 +256,7 @@
 //    [classA syncMain];
 //    NSString *string = [classA getString];
     
-    //手动触发KVO 
+    //手动触发KVO
     [classA willChangeValueForKey:@"age"];
     [classA didChangeValueForKey:@"age"];
     
@@ -263,6 +264,27 @@
     void *obj = &cls;
     [(__bridge  id)obj print];
     //iOSInterviewProblems[14931:17910655] self.name = <BossClassA: 0x6000034a4f00>
+}
+
+#pragma mark - weak
+
+- (void)testWeak
+{
+    __weak BossClassA *weakClassA = nil;
+    __weak int weakb;
+    
+    NSLog(@"1111");
+    
+    {
+        BossClassA *classA = [[BossClassA alloc] init];
+        weakClassA = classA;
+        int b = 1234;
+        weakb = b;
+        NSLog(@"trigger");
+    }
+    
+    NSLog(@"222");
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -65,6 +65,7 @@
     // 4个任务ABCD
     // C依赖AB完成，使用 NSOperation NSOperationQueue 实现
     // D和ABC无关，期望尽量快执行完成所有任务
+    // 使用NSOperation解决
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     queue.maxConcurrentOperationCount = 2;
@@ -90,6 +91,7 @@
     // 4个任务ABCD
     // C依赖AB完成，使用 GCD 实现
     // D和ABC无关，期望尽量快执行完成所有任务
+    // 使用dispatch_group解决
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [self taskD:@"D"];
@@ -98,24 +100,52 @@
     dispatch_queue_t current1 = dispatch_queue_create("current1", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
     
-    //创建信号量 2 代表线程池中，最多有2个线程存在
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(2);
-    
     dispatch_group_async(group, current1, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         [self taskA:@"A"];
-        dispatch_semaphore_signal(semaphore);
     });
     
     dispatch_group_async(group, current1, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         [self taskB:@"B"];
-        dispatch_semaphore_signal(semaphore);
     });
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         [self taskC:@"C"];
     });
+}
+
++ (void)run4TaskSemaphore {
+    // 4个任务ABCD
+    // C依赖AB完成，使用 GCD 实现
+    // D和ABC无关，期望尽量快执行完成所有任务
+    // 使用semaphore解决
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self taskD:@"D"];
+    });
+    
+    dispatch_queue_t current1 = dispatch_queue_create("current1", DISPATCH_QUEUE_CONCURRENT);
+    
+    //创建信号量 2 代表线程池中，最多有2个线程存在
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(2);
+    
+    dispatch_async(current1, ^{
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        [self taskA:@"A"];
+        dispatch_semaphore_signal(semaphore);
+    });
+    
+    dispatch_async(current1, ^{
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        [self taskB:@"B"];
+        dispatch_semaphore_signal(semaphore);
+    });
+    
+    dispatch_async(current1, ^{
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        [self taskC:@"C"];
+        dispatch_semaphore_signal(semaphore);
+    });
+    
 }
 
 
