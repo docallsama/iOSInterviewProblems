@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name;
 - (void)print; //!<15
 
++ (NSArray *)findAllOf:(Class)defaultClass;
+
 @end
 
 NS_ASSUME_NONNULL_END

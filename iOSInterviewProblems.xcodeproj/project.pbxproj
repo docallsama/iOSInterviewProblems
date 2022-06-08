@@ -12,6 +12,7 @@
 		A7DE4C5124D6DD7B006DBA60 /* PerformedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DE4C5024D6DD7B006DBA60 /* PerformedObject.m */; };
 		A7F7B1B12839214C008B0ADB /* BossClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7B1B02839214C008B0ADB /* BossClassA.m */; };
 		A7F7B1B42839277F008B0ADB /* TestBossMRC.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7B1B32839277F008B0ADB /* TestBossMRC.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7F7B1B7284CD585008B0ADB /* GrandSon.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7B1B6284CD585008B0ADB /* GrandSon.m */; };
 		CE0F074A25921B300042FC8C /* MethodCallResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0F074925921B300042FC8C /* MethodCallResultViewController.m */; };
 		CE278AFA27059D3B004298F2 /* testRunloop.png in Resources */ = {isa = PBXBuildFile; fileRef = CE278AF927059D3B004298F2 /* testRunloop.png */; };
 		CE2952511FE8C15200B1BBF1 /* HitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2952501FE8C15100B1BBF1 /* HitTestView.m */; };
@@ -74,6 +75,8 @@
 		A7F7B1B02839214C008B0ADB /* BossClassA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BossClassA.m; sourceTree = "<group>"; };
 		A7F7B1B22839277F008B0ADB /* TestBossMRC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBossMRC.h; sourceTree = "<group>"; };
 		A7F7B1B32839277F008B0ADB /* TestBossMRC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBossMRC.m; sourceTree = "<group>"; };
+		A7F7B1B5284CD585008B0ADB /* GrandSon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrandSon.h; sourceTree = "<group>"; };
+		A7F7B1B6284CD585008B0ADB /* GrandSon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrandSon.m; sourceTree = "<group>"; };
 		CE0F074825921B300042FC8C /* MethodCallResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodCallResultViewController.h; sourceTree = "<group>"; };
 		CE0F074925921B300042FC8C /* MethodCallResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodCallResultViewController.m; sourceTree = "<group>"; };
 		CE278AF927059D3B004298F2 /* testRunloop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testRunloop.png; sourceTree = "<group>"; };
@@ -592,6 +595,8 @@
 				CEF8F97D1FC7FAF700BB52EE /* Father.m */,
 				CEF8F97F1FC7FB0000BB52EE /* Son.h */,
 				CEF8F9801FC7FB0000BB52EE /* Son.m */,
+				A7F7B1B5284CD585008B0ADB /* GrandSon.h */,
+				A7F7B1B6284CD585008B0ADB /* GrandSon.m */,
 				A7F7B1AF2839214C008B0ADB /* BossClassA.h */,
 				A7F7B1B02839214C008B0ADB /* BossClassA.m */,
 				A7F7B1B22839277F008B0ADB /* TestBossMRC.h */,
@@ -692,6 +697,7 @@
 				CEF53137271826810056878F /* AnimationSubClassView.m in Sources */,
 				CEA2DC001FE2087B00592FDA /* RunloopViewController.m in Sources */,
 				CECCF51427463855001A3389 /* ParentPerson.m in Sources */,
+				A7F7B1B7284CD585008B0ADB /* GrandSon.m in Sources */,
 				CED9708B24F4E81A000CDFB5 /* NotificationViewController.m in Sources */,
 				CE9E12FD1FB59233009D6E6C /* Person.m in Sources */,
 				CEA50CD21F78F0EA00453DBE /* AppDelegate.m in Sources */,

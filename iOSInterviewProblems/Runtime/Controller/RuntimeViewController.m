@@ -38,8 +38,8 @@
 //    [self replaceMethodOfPersonWithExistMethod];
     
 //    [self personWithUnkownMethod];
-//    [self testBoss];
-    [self testWeak];
+    [self testBoss];
+//    [self testWeak];
 }
 
 #pragma mark - 属性相关操作
@@ -264,6 +264,10 @@
     void *obj = &cls;
     [(__bridge  id)obj print];
     //iOSInterviewProblems[14931:17910655] self.name = <BossClassA: 0x6000034a4f00>
+    
+    NSArray *tcp = [BossClassA findAllOf:[Father class]];
+    //Son GrandSon
+    
 }
 
 #pragma mark - weak
